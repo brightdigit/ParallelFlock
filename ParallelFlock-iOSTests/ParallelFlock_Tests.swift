@@ -7,9 +7,14 @@
 //
 
 import XCTest
-@testable import ParallelFlock_iOS
+@testable import ParallelFlock
 
-class ParallelFlock_iOSTests: XCTestCase {
+extension UUID {
+  static func random (_: Int) -> UUID {
+    return UUID()
+  }
+}
+class ParallelFlock_Tests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -24,6 +29,26 @@ class ParallelFlock_iOSTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+      let uuids = (0...5).map(UUID.random)
+      
+      let exp = expectation(description: "completed conversion")
+      let parallel = Parallel(source: uuids)
+      
+      parallel.map({ (uuid, completion : (String) -> Void) in
+        let nsuuid = uuid as NSUUID
+        var bytes = [UInt8]()
+        nsuuid.getBytes(&bytes)
+        let data = Data(bytes: bytes)
+        let string : String = Base32Encode(data: data)
+        completion(string)
+      }) { (result) in
+        print(result)
+        XCTAssertEqual(result.count, uuids.count)
+        
+        exp.fulfill()
+      }
+      
+      wait(for: [exp], timeout: 300)
     }
     
     func testPerformanceExample() {
