@@ -66,7 +66,12 @@ public class ParallelMapOperation<T,U> {
     }
       
       group.notify(queue: self.queue, execute: {
-        let result = self.temporaryResult.compactMap{$0}
+        let result : Array<U>
+        #if swift(>=4.1)
+          result = self.temporaryResult.compactMap{$0}
+        #else
+          result = self.temporaryResult.flatMap{$0}
+        #endif
         assert(result.count == self.source.count)
         self.status = .completed(result)
         self.completion(result)
