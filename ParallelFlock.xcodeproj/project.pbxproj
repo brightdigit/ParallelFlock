@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B3CD0D18202B800900A5D1A6 /* Base32.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CD0D17202B800800A5D1A6 /* Base32.swift */; };
 		B3CD0D1A202B814D00A5D1A6 /* Parallel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CD0D19202B814D00A5D1A6 /* Parallel.swift */; };
 		B3F205B0202B7EF90088B443 /* ParallelFlock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F205A6202B7EF90088B443 /* ParallelFlock.framework */; };
 		B3F205B5202B7EF90088B443 /* ParallelFlock_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F205B4202B7EF90088B443 /* ParallelFlock_Tests.swift */; };
@@ -25,7 +24,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B3CD0D17202B800800A5D1A6 /* Base32.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base32.swift; sourceTree = "<group>"; };
 		B3CD0D19202B814D00A5D1A6 /* Parallel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parallel.swift; sourceTree = "<group>"; };
 		B3F205A6202B7EF90088B443 /* ParallelFlock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParallelFlock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F205A9202B7EF90088B443 /* ParallelFlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParallelFlock.h; sourceTree = "<group>"; };
@@ -85,7 +83,6 @@
 		B3F205B3202B7EF90088B443 /* ParallelFlock-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				B3CD0D17202B800800A5D1A6 /* Base32.swift */,
 				B3F205B4202B7EF90088B443 /* ParallelFlock_Tests.swift */,
 				B3F205B6202B7EF90088B443 /* Info.plist */,
 			);
@@ -212,7 +209,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3F205B5202B7EF90088B443 /* ParallelFlock_Tests.swift in Sources */,
-				B3CD0D18202B800900A5D1A6 /* Base32.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

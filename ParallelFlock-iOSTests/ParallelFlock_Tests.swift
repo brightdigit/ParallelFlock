@@ -29,33 +29,28 @@ class ParallelFlock_Tests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-      let uuids = (0...5).map(UUID.random)
+      let uuids = (0...200).map(UUID.random)
       
       let exp = expectation(description: "completed conversion")
-      let parallel = Parallel(source: uuids)
       
-      parallel.map({ (uuid, completion : (String) -> Void) in
-        let nsuuid = uuid as NSUUID
-        var bytes = [UInt8]()
-        nsuuid.getBytes(&bytes)
-        let data = Data(bytes: bytes)
-        let string : String = Base32Encode(data: data)
-        completion(string)
+      var op : ParallelMapOperation<UUID, String>?
+      let operation = uuids.parallel.map({ (uuid, completion : @escaping (String) -> Void) in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+          if let progress = op?.progress {
+            print(progress)
+          }
+          completion(uuid.uuidString)
+        })
       }) { (result) in
-        print(result)
         XCTAssertEqual(result.count, uuids.count)
         
         exp.fulfill()
       }
       
+      op = operation
+      
       wait(for: [exp], timeout: 300)
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+  
     
 }
