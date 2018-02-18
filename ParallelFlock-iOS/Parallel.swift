@@ -9,12 +9,98 @@
 import Foundation
 
 public typealias ParallelMapItemClosure<T, U> = (T, @escaping (U)->Void) -> Void
-public typealias ParallelMapCompletionClosure<U> = (Array<U>) -> Void
+public typealias ParallelCompletionClosure<T> = (T) -> Void
+public typealias ParallelMapCompletionClosure<U> = ParallelCompletionClosure<Array<U>>
+public typealias ParallelReduceItemClosure<T> = (T, T, @escaping (T) -> Void) -> Void
 
+public protocol ParallelOperation {
+  func begin ()
+  var sourceCount : Int { get }
+  var completedCount : Int { get }
+  
+}
 public enum ParallelOperationStatus<U>  {
   case initialized
   case running(Int)
   case completed(U)
+}
+
+public class ParallelReduceOperation<T>  {
+  
+  public let source : Array<T>
+  public let itemClosure : ParallelReduceItemClosure<T>
+  public let completion: ParallelCompletionClosure<T>
+  public let queue : DispatchQueue
+  public let arrayQueue : DispatchQueue
+  
+  public private(set) var status : ParallelOperationStatus<T> = .initialized
+  public private(set) var temporaryResult : Array<T>
+  public private(set) var iterationCount = 0
+  
+  public var sourceCount: Int {
+    return self.source.count
+  }
+  public var maxIterations : Int {
+    return Int(ceil(log2(Double(self.source.count))))
+  }
+  
+  public init (source: Array<T>, itemClosure: @escaping ParallelReduceItemClosure<T>, completion: @escaping ParallelCompletionClosure<T>, queue: DispatchQueue? = nil, arrayQueue: DispatchQueue? = nil) {
+    self.source = source
+    self.itemClosure = itemClosure
+    self.completion = completion
+    self.queue = queue ?? DispatchQueue.global()
+    self.arrayQueue = arrayQueue ?? DispatchQueue(label: "arrayQueue", qos: .default, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil)
+    
+    self.temporaryResult = source
+  }
+  
+  public func begin () {
+    switch self.status {
+    case .initialized:
+      break
+    default:
+      return
+    }
+    self.status = .running(0)
+    self.iterate()
+    
+  }
+  
+  public func iterate () {
+    if self.iterationCount <= self.maxIterations && self.temporaryResult.count > 1 {
+      self.iterationCount += 1
+      let right = self.temporaryResult[self.temporaryResult.count/2..<self.temporaryResult.count]
+      let left = self.temporaryResult[0..<self.temporaryResult.count/2]
+      let zipValues = zip(left, right)
+      var values = Array<T>()
+      let group = DispatchGroup()
+      for (left, right) in zipValues {
+        group.enter()
+        queue.async {
+          self.itemClosure(left, right, { (reduced) in
+            self.arrayQueue.async(group: nil, qos: .default, flags: .barrier, execute: {
+              values.append(reduced)
+              group.leave()
+            })
+          })
+        }
+      }
+      group.notify(queue: queue) {
+        if let last = right.last, right.count != left.count {
+          values.append(last)
+        }
+        self.temporaryResult = values
+        self.status = .running(self.source.count  - values.count)
+        self.iterate()
+      }
+    } else {
+      assert(self.temporaryResult.count == 1)
+      let result = self.temporaryResult.first!
+        self.status = .completed(result)
+        self.completion(result)
+      
+    }
+  }
 }
 
 public class ParallelMapOperation<T,U> {
@@ -27,6 +113,9 @@ public class ParallelMapOperation<T,U> {
   public private(set) var status : ParallelOperationStatus<Array<U>> = .initialized
   public private(set) var temporaryResult : Array<U?>
 
+  public var sourceCount: Int {
+    return self.source.count
+  }
   public init (source: Array<T>, itemClosure: @escaping ParallelMapItemClosure<T,U>, completion: @escaping ParallelMapCompletionClosure<U>, queue: DispatchQueue? = nil, arrayQueue: DispatchQueue? = nil) {
     self.source = source
     self.itemClosure = itemClosure
@@ -38,7 +127,6 @@ public class ParallelMapOperation<T,U> {
   }
   
   public func begin () {
-    
     switch self.status {
     case .initialized:
       break
@@ -80,11 +168,15 @@ public class ParallelMapOperation<T,U> {
   
 }
 
-extension ParallelMapOperation {
+extension ParallelOperation {
   public var progress : Double {
-    return Double(self.completedCount) / Double(self.source.count)
+    return Double(self.completedCount) / Double(self.sourceCount)
     
   }
+}
+
+extension ParallelReduceOperation : ParallelOperation {
+  
   
   public var completedCount : Int {
     switch self.status {
@@ -94,7 +186,23 @@ extension ParallelMapOperation {
     case .running(let count):
       return count
     case .completed(_):
-      return source.count
+      return sourceCount
+    }
+  }
+}
+
+extension ParallelMapOperation : ParallelOperation {
+
+  
+  public var completedCount : Int {
+    switch self.status {
+      
+    case .initialized:
+      return 0
+    case .running(let count):
+      return count
+    case .completed(_):
+      return sourceCount
     }
   }
 }
@@ -116,6 +224,12 @@ extension Array {
 extension Parallel {
   func map<U>(_ each: @escaping ParallelMapItemClosure<T,U>, completion: @escaping ParallelMapCompletionClosure<U>) -> ParallelMapOperation<T, U> {
     let operation = ParallelMapOperation(source: self.source, itemClosure: each, completion: completion)
+    operation.begin()
+    return operation
+  }
+  
+  func reduce(_ each: @escaping ParallelReduceItemClosure<T>, completion: @escaping ParallelCompletionClosure<T>) -> ParallelReduceOperation<T> {
+    let operation = ParallelReduceOperation(source: self.source, itemClosure: each, completion: completion)
     operation.begin()
     return operation
   }

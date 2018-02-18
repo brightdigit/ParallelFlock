@@ -4,10 +4,11 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 let numbers = Array(1...200)
 
 
+var count = 0
 func pairAndSum<T>(numbers : Array<T>,
                    itemClosure: @escaping (T,T,(T)->Void)->Void,
                    completion: @escaping (Array<T>) -> Void) {
-  
+  count += 1
   let right = numbers[numbers.count/2..<numbers.count]
   let left = numbers[0..<numbers.count/2]
   let group = DispatchGroup()
@@ -41,6 +42,8 @@ func onCompletion (result : Array<Int>) {
   print(result)
   guard result.count > 1 else {
     print(numbers.reduce(0, +))
+    print(count)
+    print(ceil(log2(Double(numbers.count))))
     PlaygroundPage.current.finishExecution()
   }
   pairAndSum(numbers: result, itemClosure: {$2($0 + $1)}, completion: onCompletion)
