@@ -24,6 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B31BDDD02039CB3B0009A0B8 /* ParallelArray.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ParallelArray.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B3CD0D19202B814D00A5D1A6 /* Parallel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parallel.swift; sourceTree = "<group>"; };
 		B3F205A6202B7EF90088B443 /* ParallelFlock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParallelFlock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F205A9202B7EF90088B443 /* ParallelFlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParallelFlock.h; sourceTree = "<group>"; };
@@ -55,6 +56,7 @@
 		B3F2059C202B7EF90088B443 = {
 			isa = PBXGroup;
 			children = (
+				B31BDDD02039CB3B0009A0B8 /* ParallelArray.playground */,
 				B3F205A8202B7EF90088B443 /* ParallelFlock-iOS */,
 				B3F205B3202B7EF90088B443 /* ParallelFlock-iOSTests */,
 				B3F205A7202B7EF90088B443 /* Products */,
