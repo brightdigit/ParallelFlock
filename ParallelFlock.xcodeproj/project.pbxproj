@@ -84,7 +84,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B357A8CD203A1097004BD19E /* .framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = .framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B32840B5203B6172006053DA /* Brewfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Brewfile; sourceTree = "<group>"; };
+		B32840B6203B617B006053DA /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		B357A8CD203A1097004BD19E /* .framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = .framework; path = ParallelFlock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B357A8D0203A1097004BD19E /* Info-watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
 		B357A8DA203A10B9004BD19E /* ParallelFlock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParallelFlock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B357A8DD203A10B9004BD19E /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
@@ -182,6 +184,8 @@
 		B3F2059C202B7EF90088B443 = {
 			isa = PBXGroup;
 			children = (
+				B32840B6203B617B006053DA /* .swiftlint.yml */,
+				B32840B5203B6172006053DA /* Brewfile */,
 				B3F205A8202B7EF90088B443 /* ParallelFlock */,
 				B3B00326203A601F0048A7CE /* ParallelFlockTests */,
 				B3F205A7202B7EF90088B443 /* Products */,
@@ -266,6 +270,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B357A8D2203A1097004BD19E /* Build configuration list for PBXNativeTarget "ParallelFlock-watchOS" */;
 			buildPhases = (
+				B32840C9203B6381006053DA /* SwiftFormat */,
+				B32840CD203B639B006053DA /* SwiftLint */,
 				B357A8C8203A1097004BD19E /* Sources */,
 				B357A8C9203A1097004BD19E /* Frameworks */,
 				B357A8CA203A1097004BD19E /* Headers */,
@@ -284,6 +290,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B357A8DF203A10B9004BD19E /* Build configuration list for PBXNativeTarget "ParallelFlock-tvOS" */;
 			buildPhases = (
+				B32840CA203B6386006053DA /* SwiftFormat */,
+				B32840CE203B63A2006053DA /* SwiftLint */,
 				B357A8D5203A10B9004BD19E /* Sources */,
 				B357A8D6203A10B9004BD19E /* Frameworks */,
 				B357A8D7203A10B9004BD19E /* Headers */,
@@ -302,6 +310,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B357A8EC203A10C9004BD19E /* Build configuration list for PBXNativeTarget "ParallelFlock-macOS" */;
 			buildPhases = (
+				B32840CB203B638A006053DA /* SwiftFormat */,
+				B32840CF203B63A7006053DA /* SwiftLint */,
 				B357A8E2203A10C9004BD19E /* Sources */,
 				B357A8E3203A10C9004BD19E /* Frameworks */,
 				B357A8E4203A10C9004BD19E /* Headers */,
@@ -374,6 +384,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3F205BA202B7EF90088B443 /* Build configuration list for PBXNativeTarget "ParallelFlock-iOS" */;
 			buildPhases = (
+				B32840C8203B637A006053DA /* SwiftFormat */,
+				B32840CC203B6393006053DA /* SwiftLint */,
 				B3F205A1202B7EF90088B443 /* Sources */,
 				B3F205A2202B7EF90088B443 /* Frameworks */,
 				B3F205A3202B7EF90088B443 /* Headers */,
@@ -503,6 +515,121 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B32840C8203B637A006053DA /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\nswiftformat \"${SRCROOT}\" --disable trailingCommas --indent 2 --allman false --removelines enabled --header strip --insertlines disabled --empty void --ranges spaced --trimwhitespace always --linebreaks lf --commas always --comments indent --ifdef indent --hexliteralcase uppercase --semicolons inline --self insert\nelse\necho \"warning: swiftformat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+		};
+		B32840C9203B6381006053DA /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\nswiftformat \"${SRCROOT}\" --disable trailingCommas --indent 2 --allman false --removelines enabled --header strip --insertlines disabled --empty void --ranges spaced --trimwhitespace always --linebreaks lf --commas always --comments indent --ifdef indent --hexliteralcase uppercase --semicolons inline --self insert\nelse\necho \"warning: swiftformat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+		};
+		B32840CA203B6386006053DA /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\nswiftformat \"${SRCROOT}\" --disable trailingCommas --indent 2 --allman false --removelines enabled --header strip --insertlines disabled --empty void --ranges spaced --trimwhitespace always --linebreaks lf --commas always --comments indent --ifdef indent --hexliteralcase uppercase --semicolons inline --self insert\nelse\necho \"warning: swiftformat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+		};
+		B32840CB203B638A006053DA /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\nswiftformat \"${SRCROOT}\" --disable trailingCommas --indent 2 --allman false --removelines enabled --header strip --insertlines disabled --empty void --ranges spaced --trimwhitespace always --linebreaks lf --commas always --comments indent --ifdef indent --hexliteralcase uppercase --semicolons inline --self insert\nelse\necho \"warning: swiftformat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+		};
+		B32840CC203B6393006053DA /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		B32840CD203B639B006053DA /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		B32840CE203B63A2006053DA /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		B32840CF203B63A7006053DA /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B357A8C8203A1097004BD19E /* Sources */ = {
