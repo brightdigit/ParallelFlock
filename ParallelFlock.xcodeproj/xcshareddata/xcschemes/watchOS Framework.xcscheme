@@ -29,6 +29,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "B357A8CC203A1097004BD19E"
+            BuildableName = "ParallelFlock.framework"
+            BlueprintName = "ParallelFlock-watchOS"
+            ReferencedContainer = "container:ParallelFlock.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

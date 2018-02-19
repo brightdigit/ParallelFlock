@@ -13,10 +13,8 @@ extension ParallelOperation {
 }
 
 extension ParallelReduceOperation: ParallelOperation {
-
   public var completedCount: Int {
     switch self.status {
-
     case .initialized:
       return 0
     case let .running(count):
@@ -28,10 +26,8 @@ extension ParallelReduceOperation: ParallelOperation {
 }
 
 extension ParallelMapOperation: ParallelOperation {
-
   public var completedCount: Int {
     switch self.status {
-
     case .initialized:
       return 0
     case let .running(count):
