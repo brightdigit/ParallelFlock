@@ -17,8 +17,26 @@ public protocol ParallelOperation {
   func begin ()
   var sourceCount : Int { get }
   var completedCount : Int { get }
-  
 }
+
+public struct ParallelOptions {
+  public static let defaultQos : DispatchQoS = {
+    if #available(OSXApplicationExtension 10.10, *) {
+      return DispatchQoS.default
+    } else {
+      return DispatchQoS.unspecified
+    }
+  }()
+  
+  public static let defaultQueue : DispatchQueue = {
+    if #available(OSXApplicationExtension 10.10, *) {
+      return DispatchQueue.global()
+    } else {
+      return DispatchQueue(label: UUID.init().uuidString)
+    }
+  }()
+}
+
 public enum ParallelOperationStatus<U>  {
   case initialized
   case running(Int)
@@ -48,8 +66,10 @@ public class ParallelReduceOperation<T>  {
     self.source = source
     self.itemClosure = itemClosure
     self.completion = completion
-    self.queue = queue ?? DispatchQueue.global()
-    self.arrayQueue = arrayQueue ?? DispatchQueue(label: "arrayQueue", qos: .default, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil)
+    self.queue = queue ?? ParallelOptions.defaultQueue
+    
+      self.arrayQueue = arrayQueue ?? DispatchQueue(label: "arrayQueue", qos: ParallelOptions.defaultQos, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil)
+
     
     self.temporaryResult = source
   }
@@ -78,7 +98,7 @@ public class ParallelReduceOperation<T>  {
         group.enter()
         queue.async {
           self.itemClosure(left, right, { (reduced) in
-            self.arrayQueue.async(group: nil, qos: .default, flags: .barrier, execute: {
+            self.arrayQueue.async(group: nil, qos: ParallelOptions.defaultQos, flags: .barrier, execute: {
               values.append(reduced)
               group.leave()
             })
@@ -120,8 +140,8 @@ public class ParallelMapOperation<T,U> {
     self.source = source
     self.itemClosure = itemClosure
     self.completion = completion
-    self.queue = queue ?? DispatchQueue.global()
-    self.arrayQueue = arrayQueue ?? DispatchQueue(label: "arrayQueue", qos: .default, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil)
+    self.queue = queue ?? ParallelOptions.defaultQueue
+    self.arrayQueue = arrayQueue ?? DispatchQueue(label: "arrayQueue", qos: ParallelOptions.defaultQos, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil)
     
     self.temporaryResult = Array<U?>.init(repeating: nil, count: self.source.count)
   }
@@ -142,7 +162,7 @@ public class ParallelMapOperation<T,U> {
       group.enter()
       queue.async(execute: {
         self.itemClosure(item, { (result) in
-          self.arrayQueue.async(group: nil, qos: .default, flags: .barrier, execute: {
+          self.arrayQueue.async(group: nil, qos: ParallelOptions.defaultQos, flags: .barrier, execute: {
             self.temporaryResult[index] = result
             count += 1
             self.status = .running(count)

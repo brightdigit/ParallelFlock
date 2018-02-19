@@ -6,7 +6,7 @@
 //  Copyright © 2018 Bright Digit, LLC. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for ParallelFlock_iOS.
 FOUNDATION_EXPORT double ParallelFlock_VersionNumber;
