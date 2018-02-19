@@ -92,6 +92,9 @@
 		B357A8DD203A10B9004BD19E /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
 		B357A8E7203A10C9004BD19E /* ParallelFlock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParallelFlock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B357A8EA203A10C9004BD19E /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
+		B3A0AB86203B6C86001D01F4 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		B3A0AB87203B6C86001D01F4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B3A0AB88203B6C86001D01F4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		B3B00325203A601F0048A7CE /* ParallelFlockTests_iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParallelFlockTests_iOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B00327203A601F0048A7CE /* ParallelFlockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallelFlockTests.swift; sourceTree = "<group>"; };
 		B3B00329203A601F0048A7CE /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
@@ -184,6 +187,9 @@
 		B3F2059C202B7EF90088B443 = {
 			isa = PBXGroup;
 			children = (
+				B3A0AB88203B6C86001D01F4 /* .gitignore */,
+				B3A0AB86203B6C86001D01F4 /* .travis.yml */,
+				B3A0AB87203B6C86001D01F4 /* README.md */,
 				B32840B6203B617B006053DA /* .swiftlint.yml */,
 				B32840B5203B6172006053DA /* Brewfile */,
 				B3F205A8202B7EF90088B443 /* ParallelFlock */,
