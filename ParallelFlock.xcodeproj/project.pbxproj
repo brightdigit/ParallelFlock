@@ -86,7 +86,7 @@
 /* Begin PBXFileReference section */
 		B32840B5203B6172006053DA /* Brewfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Brewfile; sourceTree = "<group>"; };
 		B32840B6203B617B006053DA /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
-		B357A8CD203A1097004BD19E /* .framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = .framework; path = ParallelFlock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B357A8CD203A1097004BD19E /* ParallelFlock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParallelFlock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B357A8D0203A1097004BD19E /* Info-watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
 		B357A8DA203A10B9004BD19E /* ParallelFlock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParallelFlock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B357A8DD203A10B9004BD19E /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
@@ -202,7 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				B3F205A6202B7EF90088B443 /* ParallelFlock.framework */,
-				B357A8CD203A1097004BD19E /* .framework */,
+				B357A8CD203A1097004BD19E /* ParallelFlock.framework */,
 				B357A8DA203A10B9004BD19E /* ParallelFlock.framework */,
 				B357A8E7203A10C9004BD19E /* ParallelFlock.framework */,
 				B3B00325203A601F0048A7CE /* ParallelFlockTests_iOS.xctest */,
@@ -289,7 +289,7 @@
 			);
 			name = "ParallelFlock-watchOS";
 			productName = "ParallelFlock-watchOS";
-			productReference = B357A8CD203A1097004BD19E /* .framework */;
+			productReference = B357A8CD203A1097004BD19E /* ParallelFlock.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B357A8D9203A10B9004BD19E /* ParallelFlock-tvOS */ = {
@@ -797,6 +797,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.brightdigit.ParallelFlock-watchOS";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -850,6 +851,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.brightdigit.ParallelFlock-tvOS";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -905,6 +907,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.brightdigit.ParallelFlock-macOS";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 			};
@@ -913,6 +916,7 @@
 		B3B0032E203A601F0048A7CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MLT7M394S7;
 				INFOPLIST_FILE = "ParallelFlockTests/Info-iOS.plist";
@@ -928,6 +932,7 @@
 		B3B0032F203A601F0048A7CE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MLT7M394S7;
 				INFOPLIST_FILE = "ParallelFlockTests/Info-iOS.plist";
@@ -943,6 +948,7 @@
 		B3B0033E203A66040048A7CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MLT7M394S7;
 				INFOPLIST_FILE = "ParallelFlockTests/Info-tvOS.plist";
@@ -959,6 +965,7 @@
 		B3B0033F203A66040048A7CE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MLT7M394S7;
 				INFOPLIST_FILE = "ParallelFlockTests/Info-tvOS.plist";
@@ -975,6 +982,7 @@
 		B3B0034E203A662B0048A7CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -992,6 +1000,7 @@
 		B3B0034F203A662B0048A7CE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
