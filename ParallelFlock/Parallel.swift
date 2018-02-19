@@ -235,7 +235,7 @@ public class Parallel<T> {
   }
 }
 
-extension Array {
+public extension Array {
   public var parallel : Parallel<Element>  {
     return Parallel(source: self)
   }
