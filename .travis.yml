@@ -5,6 +5,6 @@ osx_image:
 before_install:
 - brew update && brew bundle
 script:
-- xcodebuild -project SwiftVer.xcodeproj -scheme "macOS Framework" -destination 'platform=OS X,arch=x86_64' -enableCodeCoverage YES test
-- xcodebuild -project SwiftVer.xcodeproj -scheme "iOS Framework"-destination "platform=iOS Simulator,name=iPhone 7 Plus,OS=11.2" -enableCodeCoverage YES test
-- xcodebuild -project SwiftVer.xcodeproj -scheme "tvOS Framework" -destination "platform=tvOS Simulator,name=Apple TV,OS=11.2" -enableCodeCoverage YES test
+- xcodebuild -project ParallelFlock.xcodeproj -scheme "macOS Framework" -destination 'platform=OS X,arch=x86_64' -enableCodeCoverage YES test
+- xcodebuild -project ParallelFlock.xcodeproj -scheme "iOS Framework"-destination "platform=iOS Simulator,name=iPhone 7 Plus,OS=11.2" -enableCodeCoverage YES test
+- xcodebuild -project ParallelFlock.xcodeproj -scheme "tvOS Framework" -destination "platform=tvOS Simulator,name=Apple TV,OS=11.2" -enableCodeCoverage YES test
