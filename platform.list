@@ -1,3 +1,5 @@
+- {osx_image: $osx_image,     env: 'SCHEME="$platform Framework" PLATFORM="platform=$platform Simulator,name=$device,OS=$version"', os: osx, language: objective-c}
+== Devices ==
 == Devices ==
 
 -- iOS 8.1 --
@@ -416,6 +418,44 @@
 
     iPad Pro (10.5-inch) (5D1A8470-1137-4EBB-9951-052CB13C8EDE) (Shutdown)
 
+-- iOS 11.3 --
+
+    iPhone 5s (42A5685E-28B7-4E54-AD23-8392EA641765) (Shutdown)
+
+    iPhone 6 (A859E47A-E97A-4138-80D2-CBA5E1D078D2) (Shutdown)
+
+    iPhone 6 Plus (AD297BB8-014A-4660-A688-E1951FD3E0D0) (Shutdown)
+
+    iPhone 6s (9F215ABB-F15F-4925-8E5E-760932B0BEF1) (Shutdown)
+
+    iPhone 6s Plus (C4801EC3-9A40-4421-B9D5-AD452B08D536) (Shutdown)
+
+    iPhone 7 (44D78931-CC3A-4533-8DB1-50E6C7E3CA84) (Shutdown)
+
+    iPhone 7 Plus (3598FC96-A05A-41DD-8E2C-DDDE3EDF423B) (Shutdown)
+
+    iPhone 8 (9026679E-8807-4E99-8E70-7D94059E327A) (Shutdown)
+
+    iPhone 8 Plus (0EB5E60F-2EAA-47B3-9631-AD718F490007) (Shutdown)
+
+    iPhone SE (0C297CED-2CE8-484C-858A-7BA7D2BE9B8C) (Shutdown)
+
+    iPhone X (338C541A-4FE0-47D6-B0AF-9F6308FE76AD) (Shutdown)
+
+    iPad Air (6C8A97B9-C14F-482A-B2CA-1FB1C3B9C80B) (Shutdown)
+
+    iPad Air 2 (431F999D-08C0-4EF8-B47B-8BEDD486C47F) (Shutdown)
+
+    iPad (5th generation) (3A6A6940-8D39-43FA-8BEC-EB5E4CD14166) (Shutdown)
+
+    iPad Pro (9.7-inch) (754A8A02-DCCE-4734-9894-E7C0B2794152) (Shutdown)
+
+    iPad Pro (12.9-inch) (00BA85DF-FEA9-4A27-822A-A007075561CC) (Shutdown)
+
+    iPad Pro (12.9-inch) (2nd generation) (D0768FF2-C699-4043-8316-B34F4E46EE21) (Shutdown)
+
+    iPad Pro (10.5-inch) (A3222A84-EA71-48B5-B8D6-CE8EC602DD44) (Shutdown)
+
 -- tvOS 9.0 --
 
     Apple TV 1080p (5217E53F-EAD2-4998-BAB4-FDBB1CDF62F6) (Shutdown)
@@ -464,86 +504,13 @@
 
     Apple TV 4K (at 1080p) (8D5582E9-41CD-4887-A21C-19C29B9C4876) (Shutdown)
 
--- watchOS 2.0 --
+-- tvOS 11.3 --
 
-    Apple Watch - 38mm (C00AA74E-9D82-4A93-BE45-9E10F59B8D56) (Shutdown)
+    Apple TV (30C85E59-9350-4148-B446-FB3D738F3771) (Shutdown)
 
-    Apple Watch - 42mm (1EE5195F-7FFC-42BC-8CCE-7766E84B0FF0) (Shutdown)
+    Apple TV 4K (6992331C-AB91-4398-83EB-1367EB72E42F) (Shutdown)
 
--- watchOS 2.1 --
-
-    Apple Watch - 38mm (E6C53264-E849-43BB-A9D1-A7CB199B6660) (Shutdown)
-
-    Apple Watch - 42mm (6E97D432-9593-4FC4-A713-6C00ABBCDC45) (Shutdown)
-
--- watchOS 2.2 --
-
-    Apple Watch - 38mm (5FADE638-A5AE-4495-879B-F1DF1A1FF392) (Shutdown)
-
-    Apple Watch - 42mm (CE823BBC-E51F-454D-A416-E3897991988A) (Shutdown)
-
--- watchOS 3.1 --
-
-    Apple Watch - 38mm (049A6072-8938-4F24-A884-05C105F53A7F) (Shutdown)
-
-    Apple Watch - 42mm (E47F122C-D719-4B83-AB3C-0B5EBCAE0859) (Shutdown)
-
-    Apple Watch Series 2 - 38mm (09301B19-4800-45DF-803E-662A790052C5) (Shutdown)
-
-    Apple Watch Series 2 - 42mm (4D3F9D35-5686-4EA6-B388-3CCB6B1C8265) (Shutdown)
-
--- watchOS 3.2 --
-
-    Apple Watch - 38mm (31C5B5D0-82A9-4A44-ABC6-29A7C5FA8993) (Shutdown)
-
-    Apple Watch - 42mm (7A7CFDC6-7BF8-4005-82AC-01966D4A20EA) (Shutdown)
-
-    Apple Watch Series 2 - 38mm (D68695DB-C79B-4D82-A2BE-D54453151884) (Shutdown)
-
-    Apple Watch Series 2 - 42mm (96AFA589-B3DD-475D-8B6D-053CE3FFEE2F) (Shutdown)
-
--- watchOS 4.0 --
-
-    Apple Watch - 38mm (C7A0F62C-B5BC-442E-BFBA-64B89038E02C) (Shutdown)
-
-    Apple Watch - 42mm (4263510B-0D54-4CE6-A41B-1E1082F216FA) (Shutdown)
-
-    Apple Watch Series 2 - 38mm (A32886BF-0C5E-4FF6-95E7-2B4164F0A359) (Shutdown)
-
-    Apple Watch Series 2 - 42mm (AC2AF311-50F3-4F8E-AA98-D848CA1B9579) (Shutdown)
-
-    Apple Watch Series 3 - 38mm (382A2012-CCA6-421D-8763-246773D870E5) (Shutdown)
-
-    Apple Watch Series 3 - 42mm (60CF1482-8B96-45C0-B881-E278835940B1) (Shutdown)
-
--- watchOS 4.1 --
-
-    Apple Watch - 38mm (F7C1550C-4A12-444F-A37A-C2FED74BC7EE) (Shutdown)
-
-    Apple Watch - 42mm (AB80B7EE-8FBD-4400-A72F-61DB72A2490C) (Shutdown)
-
-    Apple Watch Series 2 - 38mm (132B8934-9A78-4BFD-96D6-00D01CCC3DE0) (Shutdown)
-
-    Apple Watch Series 2 - 42mm (48781718-3952-4678-A092-26359A7C51B2) (Shutdown)
-
-    Apple Watch Series 3 - 38mm (1DFC21D7-E1CE-401F-8251-08859FAA8A17) (Shutdown)
-
-    Apple Watch Series 3 - 42mm (9651F6F8-337C-4F03-8629-C286435C05E4) (Shutdown)
-
--- watchOS 4.2 --
-
-    Apple Watch - 38mm (A3C6542E-9CF9-4C94-B131-06D39C232489) (Shutdown)
-
-    Apple Watch - 42mm (04075DCF-4E4C-47A2-8169-B6C7F5564F4F) (Shutdown)
-
-    Apple Watch Series 2 - 38mm (41A95B44-0814-4D4C-8C3B-DE82F0344E10) (Shutdown)
-
-    Apple Watch Series 2 - 42mm (3A218E48-8806-42BB-B060-1CF391B7B710) (Shutdown)
-
-    Apple Watch Series 3 - 38mm (2E6084E4-7887-4DD1-B8F3-1A34B5A68D5D) (Shutdown)
-
-    Apple Watch Series 3 - 42mm (ED30A0C6-B36F-4BAA-BE5F-E036FB77F5DE) (Shutdown)
-
+    Apple TV 4K (at 1080p) (88D6BA42-A3A2-4239-A1A7-33BE76EA5292) (Shutdown)
 Xcode 9.2
 
 iOS 8.1
