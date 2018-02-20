@@ -1,7 +1,6 @@
 import Foundation
 
 public class ParallelReduceOperation<T> {
-
   public let source: [T]
   public let itemClosure: ParallelReduceItemClosure<T>
   public let completion: ParallelCompletionClosure<T>

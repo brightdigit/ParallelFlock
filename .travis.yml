@@ -1,0 +1,13 @@
+language: objective-c
+matrix:
+  include:
+    - os: osx
+      osx_image: xcode9.2
+    - os: osx
+      osx_image: xcode9.3beta
+before_install:
+- brew update && brew bundle
+script:
+- xcodebuild -project ParallelFlock.xcodeproj -scheme "macOS Framework" -destination 'platform=OS X,arch=x86_64' -enableCodeCoverage YES test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+- xcodebuild -project ParallelFlock.xcodeproj -scheme "iOS Framework" -destination "platform=iOS Simulator,name=iPhone 7 Plus,OS=11.2" -enableCodeCoverage YES test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+- xcodebuild -project ParallelFlock.xcodeproj -scheme "tvOS Framework" -destination "platform=tvOS Simulator,name=Apple TV,OS=11.2" -enableCodeCoverage YES test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
