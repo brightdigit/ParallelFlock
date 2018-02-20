@@ -31,21 +31,13 @@ class ParallelFlockTests: XCTestCase {
 
     let exp = expectation(description: "completed conversion")
 
-    var op: ParallelMapOperation<UUID, String>?
-    let operation = uuids.parallel.map({ (uuid, completion: @escaping (String) -> Void) in
-      DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-        if let progress = op?.progress {
-          print(progress)
-        }
-        completion(uuid.uuidString)
-      })
-    }, completion: { result in
+    _ = uuids.parallel.map({
+      return $0.uuidString
+    }, completion: { (result) in
       XCTAssertEqual(result.count, uuids.count)
-
+      
       exp.fulfill()
     })
-
-    op = operation
 
     wait(for: [exp], timeout: 300)
   }
@@ -54,21 +46,12 @@ class ParallelFlockTests: XCTestCase {
     let exp = expectation(description: "completed conversion")
     let numbers = (0 ... 5000).map { _ in arc4random_uniform(200) + 1 }
     let actualSum = numbers.reduce(0, +)
-    var op: ParallelReduceOperation<UInt32>?
-    let operation = numbers.parallel.reduce({ lhs, rhs, completion -> Void in
-      DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-        if let progress = op?.progress {
-          print(progress)
-        }
-        completion(lhs + rhs)
-      })
-    }, completion: { result in
+    _ = numbers.parallel.reduce(+, completion: { result in
 
       XCTAssertEqual(result, actualSum)
 
       exp.fulfill()
     })
-    op = operation
     wait(for: [exp], timeout: 300)
   }
 }
