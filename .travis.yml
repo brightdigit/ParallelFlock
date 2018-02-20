@@ -1,7 +1,10 @@
 language: objective-c
-osx_image:
-  - xcode9.2
-  - xcode9.3beta
+matrix:
+  include:
+    - os: osx
+      osx_image: xcode9.2
+    - os: osx
+      osx_image: xcode9.2
 before_install:
 - brew update && brew bundle
 script:
