@@ -32,10 +32,10 @@ class ParallelFlockTests: XCTestCase {
     let exp = expectation(description: "completed conversion")
 
     _ = uuids.parallel.map({
-      return $0.uuidString
-    }, completion: { (result) in
+      $0.uuidString
+    }, completion: { result in
       XCTAssertEqual(result.count, uuids.count)
-      
+
       exp.fulfill()
     })
 
