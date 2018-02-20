@@ -1,7 +1,7 @@
 language: objective-c
 matrix:
   include:
-    - {osx_image: xcode9.2,     env: 'SCHEME="macOS Framework" PLAT='platform=OS X,arch=x86_64'}
+    - {osx_image: xcode9.2,     env: 'SCHEME="macOS Framework" PLAT='platform=OS X,arch=x86_64', os: osx, language: objective-c}
 before_install:
 - brew update && brew bundle
 script:
