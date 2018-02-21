@@ -135,8 +135,8 @@ matrix:
     - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (10.5-inch),OS=11.2"', os: osx, language: objective-c}
     - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=9.2"', os: osx, language: objective-c}
     - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=10.2"', os: osx, language: objective-c}
-    - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=11.0.1"', os: osx, language: objective-c}
-    - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K,OS=11.0.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K,OS=11.0"', os: osx, language: objective-c}
     - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K,OS=11.1"', os: osx, language: objective-c}
     - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV,OS=11.2"', os: osx, language: objective-c}
     - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K,OS=11.2"', os: osx, language: objective-c}
@@ -190,8 +190,8 @@ matrix:
     - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=10.0"', os: osx, language: objective-c}
     - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=10.1"', os: osx, language: objective-c}
     - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=10.2"', os: osx, language: objective-c}
-    - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=11.0.1"', os: osx, language: objective-c}
-    - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K,OS=11.0.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K,OS=11.0"', os: osx, language: objective-c}
     - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV,OS=11.1"', os: osx, language: objective-c}
     - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K,OS=11.1"', os: osx, language: objective-c}
     - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV,OS=11.2"', os: osx, language: objective-c}
