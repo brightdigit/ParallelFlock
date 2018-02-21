@@ -1,12 +1,444 @@
 matrix:
   include:
     - {osx_image: xcode9.2,     env: 'SCHEME="macOS Framework" PLATFORM="platform=OS X,arch=x86_64"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=8.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=8.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=8.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=8.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad 2,OS=8.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Retina,OS=8.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=8.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=8.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 4s,OS=8.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=8.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=8.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=8.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=8.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad 2,OS=8.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Retina,OS=8.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=8.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=8.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 4s,OS=8.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=8.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=8.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=8.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=8.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad 2,OS=8.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Retina,OS=8.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=8.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=8.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 4s,OS=8.4"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=8.4"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=8.4"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=8.4"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=8.4"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad 2,OS=8.4"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Retina,OS=8.4"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=8.4"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=8.4"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 4s,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s Plus,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad 2,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Retina,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 4s,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s Plus,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad 2,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Retina,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch),OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 4s,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s Plus,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad 2,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Retina,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch),OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 4s,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s Plus,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone SE,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad 2,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Retina,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch),OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s Plus,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7 Plus,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone SE,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (9.7-inch),OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch),OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s Plus,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7 Plus,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone SE,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (9.7-inch),OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch),OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s Plus,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7 Plus,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone SE,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (9.7-inch),OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch),OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s,OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s Plus,OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7,OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7 Plus,OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone SE,OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad (5th generation),OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (9.7-inch),OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch),OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch) (2nd generation),OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (10.5-inch),OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s Plus,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7 Plus,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 8,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 8 Plus,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone SE,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone X,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad (5th generation),OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (9.7-inch),OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch),OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch) (2nd generation),OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (10.5-inch),OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s Plus,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7 Plus,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 8,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 8 Plus,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone SE,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone X,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad (5th generation),OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (9.7-inch),OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch),OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch) (2nd generation),OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (10.5-inch),OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s Plus,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7,OS=11.2"', os: osx, language: objective-c}
     - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7 Plus,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 8,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 8 Plus,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone SE,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone X,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad (5th generation),OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (9.7-inch),OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch),OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch) (2nd generation),OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (10.5-inch),OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K (at 1080p),OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K (at 1080p),OS=11.1"', os: osx, language: objective-c}
     - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV,OS=11.2"', os: osx, language: objective-c}
-    
+    - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K (at 1080p),OS=11.2"', os: osx, language: objective-c}
+
     - {osx_image: xcode9.3beta,     env: 'SCHEME="macOS Framework" PLATFORM="platform=OS X,arch=x86_64"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 4s,OS=8.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=8.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=8.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=8.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=8.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad 2,OS=8.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Retina,OS=8.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=8.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=8.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 4s,OS=8.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=8.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=8.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=8.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=8.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad 2,OS=8.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Retina,OS=8.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=8.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=8.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 4s,OS=8.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=8.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=8.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=8.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=8.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad 2,OS=8.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Retina,OS=8.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=8.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=8.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 4s,OS=8.4"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=8.4"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=8.4"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=8.4"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=8.4"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad 2,OS=8.4"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Retina,OS=8.4"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=8.4"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=8.4"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 4s,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s Plus,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad 2,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Retina,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 4s,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s Plus,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad 2,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Retina,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch),OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 4s,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s Plus,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad 2,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Retina,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch),OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 4s,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s Plus,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone SE,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad 2,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Retina,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch),OS=9.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s Plus,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7 Plus,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone SE,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (9.7-inch),OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch),OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s Plus,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7 Plus,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone SE,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (9.7-inch),OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch),OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s Plus,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7 Plus,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone SE,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (9.7-inch),OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch),OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s,OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s Plus,OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7,OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7 Plus,OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone SE,OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad (5th generation),OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (9.7-inch),OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch),OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch) (2nd generation),OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (10.5-inch),OS=10.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s Plus,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7 Plus,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 8,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 8 Plus,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone SE,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone X,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad (5th generation),OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (9.7-inch),OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch),OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch) (2nd generation),OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (10.5-inch),OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s Plus,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7 Plus,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 8,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 8 Plus,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone SE,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone X,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad (5th generation),OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (9.7-inch),OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch),OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch) (2nd generation),OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (10.5-inch),OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s Plus,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7,OS=11.2"', os: osx, language: objective-c}
     - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7 Plus,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 8,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 8 Plus,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone SE,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone X,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad (5th generation),OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (9.7-inch),OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch),OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch) (2nd generation),OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (10.5-inch),OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5s,OS=11.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6,OS=11.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6 Plus,OS=11.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s,OS=11.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 6s Plus,OS=11.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7,OS=11.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 7 Plus,OS=11.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 8,OS=11.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 8 Plus,OS=11.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone SE,OS=11.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone X,OS=11.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air,OS=11.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Air 2,OS=11.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad (5th generation),OS=11.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (9.7-inch),OS=11.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch),OS=11.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (12.9-inch) (2nd generation),OS=11.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (10.5-inch),OS=11.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=9.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=9.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=9.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=10.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=10.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=10.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K,OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K (at 1080p),OS=11.0"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K,OS=11.1"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K (at 1080p),OS=11.1"', os: osx, language: objective-c}
     - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K,OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K (at 1080p),OS=11.2"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV,OS=11.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K,OS=11.3"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K (at 1080p),OS=11.3"', os: osx, language: objective-c}
 before_install:
 - brew update && brew bundle
 script:
