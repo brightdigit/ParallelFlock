@@ -19,8 +19,17 @@ class ParallelFlockTests: XCTestCase {
 
   func testPerformanceExample() {
     // This is an example of a performance test case.
-    self.measure {
-      // Put the code you want to measure the time of here.
+
+    self.measureMetrics([.wallClockTime], automaticallyStartMeasuring: false) {
+      let expect = expectation(description: "map completed")
+      let source = [Void](repeating: Void(), count: 100_000)
+      startMeasuring()
+      _ = source.parallel.map({ _ in arc4random_uniform(100_000) }, completion: { _ in
+        expect.fulfill()
+      })
+      waitForExpectations(timeout: 10000) { _ in
+        self.stopMeasuring()
+      }
     }
   }
 
@@ -31,13 +40,29 @@ class ParallelFlockTests: XCTestCase {
 
     let exp = expectation(description: "completed conversion")
 
+    let group = DispatchGroup()
+
+    var expected: [String]!
+    var actual: [String]!
+
+    group.enter()
     _ = uuids.parallel.map({
       $0.uuidString
     }, completion: { result in
-      XCTAssertEqual(result.count, uuids.count)
-
-      exp.fulfill()
+      actual = result
+      group.leave()
     })
+
+    group.enter()
+    DispatchQueue.main.async {
+      expected = uuids.map { $0.uuidString }
+      group.leave()
+    }
+
+    group.notify(queue: .main) {
+      XCTAssertEqual(expected, actual)
+      exp.fulfill()
+    }
 
     wait(for: [exp], timeout: 300)
   }
