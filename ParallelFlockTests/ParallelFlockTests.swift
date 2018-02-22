@@ -31,13 +31,29 @@ class ParallelFlockTests: XCTestCase {
 
     let exp = expectation(description: "completed conversion")
 
+    let group = DispatchGroup()
+
+    var expected: [String]!
+    var actual: [String]!
+
+    group.enter()
     _ = uuids.parallel.map({
       $0.uuidString
     }, completion: { result in
-      XCTAssertEqual(result.count, uuids.count)
-
-      exp.fulfill()
+      actual = result
+      group.leave()
     })
+
+    group.enter()
+    DispatchQueue.main.async {
+      expected = uuids.map { $0.uuidString }
+      group.leave()
+    }
+
+    group.notify(queue: .main) {
+      XCTAssertEqual(expected, actual)
+      exp.fulfill()
+    }
 
     wait(for: [exp], timeout: 300)
   }
