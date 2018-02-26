@@ -27,7 +27,6 @@ func primeFactors(value: UInt32) -> [UInt32] {
     result.append(number)
   }
 
-  // print(value)
   return result
 }
 
@@ -65,7 +64,7 @@ class MasterViewController: UITableViewController {
     self.timer = timer
 
     DispatchQueue.global(qos: .background).async {
-      let objects = (0 ... 1_000_000).map { _ in arc4random_uniform(1_000_000) + 1_000_000 }.unique().sorted()
+      let objects = (0 ... 500_000).map { _ in arc4random_uniform(100_0000) + 100_0000 }.unique().sorted()
       self.objects = objects
       DispatchQueue.main.async {
         self.tableView.reloadData()
@@ -77,7 +76,6 @@ class MasterViewController: UITableViewController {
         self.timer.invalidate()
         DispatchQueue.main.async {
           UIView.animate(withDuration: 1.0, animations: {
-            
             self.navigationItem.titleView = nil
           })
         }
@@ -128,7 +126,7 @@ class MasterViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, didSelectRowAt _: IndexPath) {
     if self.factors != nil {
-    self.performSegue(withIdentifier: "cellSegue", sender: tableView)
+      self.performSegue(withIdentifier: "cellSegue", sender: tableView)
     }
   }
 }
