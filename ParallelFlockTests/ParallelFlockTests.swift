@@ -22,8 +22,8 @@ class ParallelFlockTests: XCTestCase {
 
     self.measureMetrics([.wallClockTime], automaticallyStartMeasuring: false) {
       let expect = expectation(description: "map completed")
-      let source = [Void](repeating: Void(), count: 100000000)
-      
+      let source = [Void](repeating: Void(), count: 100_000_000)
+
       startMeasuring()
       _ = source.parallel.map({ _ in arc4random_uniform(UInt32.max) }, completion: { _ in
         expect.fulfill()
