@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-38" y="-630"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Primes-->
         <scene sceneID="I8r-a1-gfd">
             <objects>
                 <tableViewController id="18B-jo-zg0" customClass="DetailViewController" customModule="ParallelFlockApp_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,7 +57,7 @@
                             <outlet property="delegate" destination="18B-jo-zg0" id="EVL-Fi-N45"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="71x-tb-Bg7"/>
+                    <navigationItem key="navigationItem" title="Primes" id="71x-tb-Bg7"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yes-Fi-NSQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,7 +97,7 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" title="Values" id="Zdf-7t-Un8"/>
                     <connections>
                         <segue destination="18B-jo-zg0" kind="show" identifier="cellSegue" id="yK0-nv-k7P"/>
                     </connections>

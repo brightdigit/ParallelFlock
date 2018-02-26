@@ -27,6 +27,7 @@ func primeFactors(value: UInt32) -> [UInt32] {
     result.append(number)
   }
 
+  // print(value)
   return result
 }
 
@@ -37,26 +38,34 @@ extension Sequence where Element: Hashable {
 }
 
 class MasterViewController: UITableViewController {
-  var objects : [UInt32]?
+  var objects: [UInt32]?
   var factors: [UInt32: [UInt32]]?
   var operation: ParallelMapOperation<UInt32, [UInt32]>?
-  weak var activityView: UIActivityIndicatorView!
+  weak var progressView: UIProgressView!
+  var timer: Timer!
 
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
-    navigationItem.leftBarButtonItem = editButtonItem
 
-    let activityView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-    activityView.hidesWhenStopped = true
-    self.activityView = activityView
-    let activityButton = UIBarButtonItem(customView: activityView)
+    let progressView = UIProgressView(progressViewStyle: .default)
 
-    navigationItem.rightBarButtonItems = [activityButton]
+    self.progressView = progressView
+    progressView.sizeToFit()
+    // let activityButton = UIBarButtonItem(customView: progressView)
+    self.navigationItem.titleView = progressView
 
-    self.activityView.startAnimating()
+    // navigationItem.rightBarButtonItems = [activityButton]
+    let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+      DispatchQueue.main.async {
+        self.progressView.setProgress(Float(self.operation?.progress ?? 0), animated: true)
+      }
+    }
+
+    self.timer = timer
+
     DispatchQueue.global(qos: .background).async {
-      let objects = (0 ... 10_000_000).map { _ in arc4random_uniform(10_000_000) + 10_000_000 }.unique().sorted()
+      let objects = (0 ... 1_000_000).map { _ in arc4random_uniform(1_000_000) + 1_000_000 }.unique().sorted()
       self.objects = objects
       DispatchQueue.main.async {
         self.tableView.reloadData()
@@ -65,8 +74,12 @@ class MasterViewController: UITableViewController {
       self.operation = objects.parallel.map(primeFactors) { factorValues in
         self.factors = [UInt32: [UInt32]].init(uniqueKeysWithValues: zip(objects, factorValues))
         self.operation = nil
+        self.timer.invalidate()
         DispatchQueue.main.async {
-          self.activityView.stopAnimating()
+          UIView.animate(withDuration: 1.0, animations: {
+            
+            self.navigationItem.titleView = nil
+          })
         }
       }
     }
@@ -80,7 +93,6 @@ class MasterViewController: UITableViewController {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-
 
   // MARK: - Segues
 
@@ -114,7 +126,9 @@ class MasterViewController: UITableViewController {
     return false
   }
 
-  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+  override func tableView(_ tableView: UITableView, didSelectRowAt _: IndexPath) {
+    if self.factors != nil {
     self.performSegue(withIdentifier: "cellSegue", sender: tableView)
+    }
   }
 }
