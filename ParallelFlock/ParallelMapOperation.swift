@@ -8,7 +8,7 @@ public class ParallelMapOperation<T, U> {
   public let arrayQueue: DispatchQueue
 
   public private(set) var status = ParallelOperationStatus<[U]>.initialized
-  public private(set) var temporaryResult: [U?]
+  public private(set) var temporaryPointer: UnsafeMutableBufferPointer<U>
 
   public var sourceCount: Int {
     return self.source.count
@@ -30,7 +30,7 @@ public class ParallelMapOperation<T, U> {
       autoreleaseFrequency: .inherit,
       target: nil)
 
-    self.temporaryResult = [U?].init(repeating: nil, count: self.source.count)
+    self.temporaryPointer = UnsafeMutableBufferPointer<U>.allocate(capacity: self.source.count)
   }
 
   public func begin() {
@@ -50,7 +50,7 @@ public class ParallelMapOperation<T, U> {
       self.queue.async(execute: {
         self.itemClosure(item, { result in
           self.arrayQueue.async(group: nil, qos: ParallelOptions.defaultQos, flags: .barrier, execute: {
-            self.temporaryResult[index] = result
+            self.temporaryPointer[index] = result
             count += 1
             self.status = .running(count)
 
@@ -62,11 +62,7 @@ public class ParallelMapOperation<T, U> {
 
     group.notify(queue: self.queue, execute: {
       let result: [U]
-      #if swift(>=4.1)
-        result = self.temporaryResult.compactMap { $0 }
-      #else
-        result = self.temporaryResult.flatMap { $0 }
-      #endif
+      result = [U](self.temporaryPointer)
       assert(result.count == self.source.count)
       self.status = .completed(result)
       self.completion(result)
