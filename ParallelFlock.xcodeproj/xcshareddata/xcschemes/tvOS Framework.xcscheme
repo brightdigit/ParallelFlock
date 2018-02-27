@@ -37,6 +37,11 @@
                BlueprintName = "ParallelFlockTests_tvOS"
                ReferencedContainer = "container:ParallelFlock.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "ParallelFlockTests/testPerformanceMap()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B301BB6E204308E500FA8C4E /* ParallelFlock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F205A6202B7EF90088B443 /* ParallelFlock.framework */; };
+		B301BB6F204308E500FA8C4E /* ParallelFlock.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3F205A6202B7EF90088B443 /* ParallelFlock.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B357A8EF203A116C004BD19E /* Parallel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CD0D19202B814D00A5D1A6 /* Parallel.swift */; };
 		B357A8F0203A116C004BD19E /* Parallel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CD0D19202B814D00A5D1A6 /* Parallel.swift */; };
 		B357A8F1203A116D004BD19E /* Parallel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CD0D19202B814D00A5D1A6 /* Parallel.swift */; };
@@ -57,9 +59,22 @@
 		B3B0037D203A690E0048A7CE /* ParallelCompletionClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00359203A690E0048A7CE /* ParallelCompletionClosure.swift */; };
 		B3CD0D1A202B814D00A5D1A6 /* Parallel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CD0D19202B814D00A5D1A6 /* Parallel.swift */; };
 		B3F205B7202B7EF90088B443 /* ParallelFlock.h in Headers */ = {isa = PBXBuildFile; fileRef = B3F205A9202B7EF90088B443 /* ParallelFlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3FC26AA2040554600D24CFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FC26A92040554600D24CFA /* AppDelegate.swift */; };
+		B3FC26AC2040554600D24CFA /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FC26AB2040554600D24CFA /* MasterViewController.swift */; };
+		B3FC26AE2040554600D24CFA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FC26AD2040554600D24CFA /* DetailViewController.swift */; };
+		B3FC26B12040554600D24CFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3FC26AF2040554600D24CFA /* Main.storyboard */; };
+		B3FC26B32040554700D24CFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FC26B22040554700D24CFA /* Assets.xcassets */; };
+		B3FC26B62040554700D24CFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3FC26B42040554700D24CFA /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B301BB70204308E500FA8C4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3F2059D202B7EF90088B443 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3F205A5202B7EF90088B443;
+			remoteInfo = "ParallelFlock-iOS";
+		};
 		B3B0032B203A601F0048A7CE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B3F2059D202B7EF90088B443 /* Project object */;
@@ -82,6 +97,20 @@
 			remoteInfo = "ParallelFlock-macOS";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B301BB72204308E500FA8C4E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B301BB6F204308E500FA8C4E /* ParallelFlock.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B32840B5203B6172006053DA /* Brewfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Brewfile; sourceTree = "<group>"; };
@@ -115,6 +144,14 @@
 		B3F205A6202B7EF90088B443 /* ParallelFlock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParallelFlock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F205A9202B7EF90088B443 /* ParallelFlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParallelFlock.h; sourceTree = "<group>"; };
 		B3F205AA202B7EF90088B443 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
+		B3FC26A72040554600D24CFA /* ParallelFlockApp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ParallelFlockApp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3FC26A92040554600D24CFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B3FC26AB2040554600D24CFA /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		B3FC26AD2040554600D24CFA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B3FC26B02040554600D24CFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B3FC26B22040554700D24CFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B3FC26B52040554700D24CFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B3FC26B72040554700D24CFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,9 +207,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B3FC26A42040554600D24CFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B301BB6E204308E500FA8C4E /* ParallelFlock.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B301BB67204308D800FA8C4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B3B00326203A601F0048A7CE /* ParallelFlockTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,7 +246,9 @@
 				B32840B5203B6172006053DA /* Brewfile */,
 				B3F205A8202B7EF90088B443 /* ParallelFlock */,
 				B3B00326203A601F0048A7CE /* ParallelFlockTests */,
+				B3FC26A82040554600D24CFA /* ParallelFlockApp-iOS */,
 				B3F205A7202B7EF90088B443 /* Products */,
+				B301BB67204308D800FA8C4E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,6 +262,7 @@
 				B3B00325203A601F0048A7CE /* ParallelFlockTests_iOS.xctest */,
 				B3B00335203A66040048A7CE /* ParallelFlockTests_tvOS.xctest */,
 				B3B00345203A662A0048A7CE /* ParallelFlockTests_macOS.xctest */,
+				B3FC26A72040554600D24CFA /* ParallelFlockApp-iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -232,6 +287,20 @@
 				B3CD0D19202B814D00A5D1A6 /* Parallel.swift */,
 			);
 			path = ParallelFlock;
+			sourceTree = "<group>";
+		};
+		B3FC26A82040554600D24CFA /* ParallelFlockApp-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				B3FC26A92040554600D24CFA /* AppDelegate.swift */,
+				B3FC26AB2040554600D24CFA /* MasterViewController.swift */,
+				B3FC26AD2040554600D24CFA /* DetailViewController.swift */,
+				B3FC26AF2040554600D24CFA /* Main.storyboard */,
+				B3FC26B22040554700D24CFA /* Assets.xcassets */,
+				B3FC26B42040554700D24CFA /* LaunchScreen.storyboard */,
+				B3FC26B72040554700D24CFA /* Info.plist */,
+			);
+			path = "ParallelFlockApp-iOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,13 +475,32 @@
 			productReference = B3F205A6202B7EF90088B443 /* ParallelFlock.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		B3FC26A62040554600D24CFA /* ParallelFlockApp-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3FC26BA2040554700D24CFA /* Build configuration list for PBXNativeTarget "ParallelFlockApp-iOS" */;
+			buildPhases = (
+				B3FC26A32040554600D24CFA /* Sources */,
+				B3FC26A42040554600D24CFA /* Frameworks */,
+				B3FC26A52040554600D24CFA /* Resources */,
+				B301BB72204308E500FA8C4E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B301BB71204308E500FA8C4E /* PBXTargetDependency */,
+			);
+			name = "ParallelFlockApp-iOS";
+			productName = "ParallelFlockApp-iOS";
+			productReference = B3FC26A72040554600D24CFA /* ParallelFlockApp-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		B3F2059D202B7EF90088B443 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Bright Digit, LLC";
 				TargetAttributes = {
@@ -445,6 +533,10 @@
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
+					B3FC26A62040554600D24CFA = {
+						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = B3F205A0202B7EF90088B443 /* Build configuration list for PBXProject "ParallelFlock" */;
@@ -453,6 +545,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = B3F2059C202B7EF90088B443;
 			productRefGroup = B3F205A7202B7EF90088B443 /* Products */;
@@ -466,6 +559,7 @@
 				B3B00324203A601F0048A7CE /* ParallelFlockTests_iOS */,
 				B3B00334203A66040048A7CE /* ParallelFlockTests_tvOS */,
 				B3B00344203A662A0048A7CE /* ParallelFlockTests_macOS */,
+				B3FC26A62040554600D24CFA /* ParallelFlockApp-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -517,6 +611,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3FC26A52040554600D24CFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3FC26B62040554700D24CFA /* LaunchScreen.storyboard in Resources */,
+				B3FC26B32040554700D24CFA /* Assets.xcassets in Resources */,
+				B3FC26B12040554600D24CFA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,9 +834,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B3FC26A32040554600D24CFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3FC26AE2040554600D24CFA /* DetailViewController.swift in Sources */,
+				B3FC26AC2040554600D24CFA /* MasterViewController.swift in Sources */,
+				B3FC26AA2040554600D24CFA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B301BB71204308E500FA8C4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3F205A5202B7EF90088B443 /* ParallelFlock-iOS */;
+			targetProxy = B301BB70204308E500FA8C4E /* PBXContainerItemProxy */;
+		};
 		B3B0032C203A601F0048A7CE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B3F205A5202B7EF90088B443 /* ParallelFlock-iOS */;
@@ -749,6 +868,25 @@
 			targetProxy = B3B0034B203A662B0048A7CE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B3FC26AF2040554600D24CFA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3FC26B02040554600D24CFA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B3FC26B42040554700D24CFA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3FC26B52040554700D24CFA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B357A8D3203A1097004BD19E /* Debug */ = {
@@ -1182,6 +1320,42 @@
 			};
 			name = Release;
 		};
+		B3FC26B82040554700D24CFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MLT7M394S7;
+				INFOPLIST_FILE = "ParallelFlockApp-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brightdigit.ParallelFlockApp-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B3FC26B92040554700D24CFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MLT7M394S7;
+				INFOPLIST_FILE = "ParallelFlockApp-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brightdigit.ParallelFlockApp-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1253,6 +1427,15 @@
 			buildConfigurations = (
 				B3F205BB202B7EF90088B443 /* Debug */,
 				B3F205BC202B7EF90088B443 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3FC26BA2040554700D24CFA /* Build configuration list for PBXNativeTarget "ParallelFlockApp-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3FC26B82040554700D24CFA /* Debug */,
+				B3FC26B92040554700D24CFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
