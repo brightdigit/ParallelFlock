@@ -10,7 +10,7 @@ class DetailViewController: UITableViewController {
 //        }
   }
 
-  public var detailItem: (multiple: UInt32, factors: [UInt32]?)!
+  public var detailItem: (multiple: UInt32, factors: [UInt32]?)?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -28,14 +28,14 @@ class DetailViewController: UITableViewController {
   }
 
   override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-    return self.detailItem.factors?.count ?? 0
+    return self.detailItem?.factors?.count ?? 0
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
     // let object = objects[indexPath.row] as! NSDate
-    cell.textLabel!.text = self.detailItem.factors![indexPath.row].description
+    cell.textLabel!.text = self.detailItem!.factors![indexPath.row].description
     return cell
   }
 

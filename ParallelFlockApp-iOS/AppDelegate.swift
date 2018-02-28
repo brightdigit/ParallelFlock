@@ -1,15 +1,15 @@
+import ParallelFlock
 import UIKit
 
+let BundleShortVersionKey = "CFBundleShortVersionString"
+let BundleVersionKey = kCFBundleVersionKey as String
+
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
-    let splitViewController = window!.rootViewController as! UISplitViewController
-    let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count - 1] as! UINavigationController
-    navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
-    splitViewController.delegate = self
     return true
   }
 
@@ -33,14 +33,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
   func applicationWillTerminate(_: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-  }
-
-  // MARK: - Split view
-
-  func splitViewController(_: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto _: UIViewController) -> Bool {
-    guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
-    guard let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController else { return false }
-
-    return false
   }
 }

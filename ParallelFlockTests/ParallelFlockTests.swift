@@ -38,17 +38,19 @@ class ParallelFlockTests: XCTestCase {
   func testArrayMap() {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
-    let uuids = (0 ... 5000).map(UUID.random)
+    let uuids = (0 ... 50000).map(UUID.random)
 
     let exp = expectation(description: "completed conversion")
 
+    var progress = 0.0
     let group = DispatchGroup()
 
     var expected: [String]!
     var actual: [String]!
 
+    let operation: ParallelMapOperation<UUID, String>?
     group.enter()
-    _ = uuids.parallel.map({
+    operation = uuids.parallel.map({
       $0.uuidString
     }, completion: { result in
       actual = result
@@ -64,6 +66,18 @@ class ParallelFlockTests: XCTestCase {
     group.notify(queue: .main) {
       XCTAssertEqual(expected, actual)
       exp.fulfill()
+    }
+
+    if #available(iOS 10.0, *) {
+      let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+        guard let operation = operation else {
+          return
+        }
+        XCTAssertGreaterThan(operation.progress, progress)
+        progress = operation.progress
+      }
+    } else {
+      // Fallback on earlier versions
     }
 
     wait(for: [exp], timeout: 300)
