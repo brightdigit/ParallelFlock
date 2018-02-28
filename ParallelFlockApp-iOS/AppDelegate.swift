@@ -1,4 +1,8 @@
+import ParallelFlock
 import UIKit
+
+let BundleShortVersionKey = "CFBundleShortVersionString"
+let BundleVersionKey = kCFBundleVersionKey as String
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -6,7 +10,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
-
     return true
   }
 
