@@ -1,6 +1,6 @@
 import Foundation
 
-public class ParallelReduceOperation<T> {
+public class ParallelReduceOperation<T>: ParallelOperation {
   public let source: [T]
   public let itemClosure: ParallelReduceItemClosure<T>
   public let completion: ParallelCompletionClosure<T>
@@ -12,9 +12,6 @@ public class ParallelReduceOperation<T> {
   public private(set) var temporaryResult: [T]
   public private(set) var iterationCount = 0
 
-  public var sourceCount: Int {
-    return self.source.count
-  }
   public var maxIterations: Int {
     return Int(ceil(log2(Double(self.source.count))))
   }

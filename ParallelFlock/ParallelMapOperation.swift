@@ -1,6 +1,6 @@
 import Foundation
 
-public class ParallelMapOperation<T, U> {
+public class ParallelMapOperation<T, U>: ParallelOperation {
   public let source: [T]
   public let itemClosure: ParallelMapItemClosure<T, U>
   public let completion: ParallelMapCompletionClosure<U>
@@ -11,9 +11,6 @@ public class ParallelMapOperation<T, U> {
   public private(set) var status = ParallelOperationStatus<[U]>.initialized
   public private(set) var temporaryResult: [U?]
 
-  public var sourceCount: Int {
-    return self.source.count
-  }
   public init(
     source: [T],
     itemClosure: @escaping ParallelMapItemClosure<T, U>,
