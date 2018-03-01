@@ -7,6 +7,21 @@ extension UUID {
   }
 }
 class ParallelFlockTests: XCTestCase {
+  class OperationWatcher<T> where T: ParallelOperation {
+    let operation: T
+    var prevProgress = 0.0
+
+    init(operation: T) {
+      self.operation = operation
+    }
+
+    @objc func onTimer(_: Timer) {
+      XCTAssertGreaterThan(self.operation.progress, self.prevProgress)
+      self.prevProgress = self.operation.progress
+      print(self.operation.progress)
+    }
+  }
+
   override func setUp() {
     super.setUp()
     // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -17,28 +32,10 @@ class ParallelFlockTests: XCTestCase {
     super.tearDown()
   }
 
-  func testPerformanceMap() {
-    // This is an example of a performance test case.
-
-    self.measureMetrics([.wallClockTime], automaticallyStartMeasuring: false) {
-      let expect = expectation(description: "map completed")
-      let source = [Void](repeating: Void(), count: 100000000)
-      
-      startMeasuring()
-      _ = source.parallel.map({ _ in arc4random_uniform(UInt32.max) }, completion: { _ in
-        expect.fulfill()
-      })
-      waitForExpectations(timeout: 10000) { error in
-        XCTAssertNil(error)
-        self.stopMeasuring()
-      }
-    }
-  }
-
   func testArrayMap() {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
-    let uuids = (0 ... 5000).map(UUID.random)
+    let uuids = (0 ... 50000).map(UUID.random)
 
     let exp = expectation(description: "completed conversion")
 
@@ -46,11 +43,14 @@ class ParallelFlockTests: XCTestCase {
 
     var expected: [String]!
     var actual: [String]!
+    var timer: Timer?
 
     group.enter()
-    _ = uuids.parallel.map({
+    let operation = uuids.parallel.map({
       $0.uuidString
     }, completion: { result in
+      timer?.invalidate()
+      timer = nil
       actual = result
       group.leave()
     })
@@ -65,6 +65,10 @@ class ParallelFlockTests: XCTestCase {
       XCTAssertEqual(expected, actual)
       exp.fulfill()
     }
+
+    let watcher = OperationWatcher(operation: operation)
+
+    timer = Timer.scheduledTimer(timeInterval: 1.0, target: watcher, selector: #selector(OperationWatcher<ParallelMapOperation<UUID, String>>.onTimer(_:)), userInfo: nil, repeats: true)
 
     wait(for: [exp], timeout: 300)
   }
