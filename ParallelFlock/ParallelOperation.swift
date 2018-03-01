@@ -17,6 +17,8 @@ public extension ParallelOperation {
       return 1.0
     case let .running(count):
       return Double(count) / Double(source.count)
+    case .invalid:
+      return Double.nan
     }
   }
 }

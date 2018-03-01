@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		B301BB6E204308E500FA8C4E /* ParallelFlock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F205A6202B7EF90088B443 /* ParallelFlock.framework */; };
 		B301BB6F204308E500FA8C4E /* ParallelFlock.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3F205A6202B7EF90088B443 /* ParallelFlock.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B31FA9B32048ADF4000CED17 /* ParallelMapOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00354203A690D0048A7CE /* ParallelMapOperation.swift */; };
+		B31FA9B42048ADF4000CED17 /* ParallelMapOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00354203A690D0048A7CE /* ParallelMapOperation.swift */; };
+		B31FA9B52048ADF5000CED17 /* ParallelMapOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00354203A690D0048A7CE /* ParallelMapOperation.swift */; };
+		B31FA9B62048ADF5000CED17 /* ParallelMapOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00354203A690D0048A7CE /* ParallelMapOperation.swift */; };
+		B321A82B2048896700D823E1 /* ParallelFlockPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321A82A2048896700D823E1 /* ParallelFlockPerformanceTests.swift */; };
+		B321A82C2048896700D823E1 /* ParallelFlockPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321A82A2048896700D823E1 /* ParallelFlockPerformanceTests.swift */; };
+		B321A82D2048896700D823E1 /* ParallelFlockPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321A82A2048896700D823E1 /* ParallelFlockPerformanceTests.swift */; };
 		B357A8EF203A116C004BD19E /* Parallel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CD0D19202B814D00A5D1A6 /* Parallel.swift */; };
 		B357A8F0203A116C004BD19E /* Parallel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CD0D19202B814D00A5D1A6 /* Parallel.swift */; };
 		B357A8F1203A116D004BD19E /* Parallel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CD0D19202B814D00A5D1A6 /* Parallel.swift */; };
@@ -33,10 +40,6 @@
 		B3B00363203A690E0048A7CE /* ParallelMapCompletionClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00353203A690D0048A7CE /* ParallelMapCompletionClosure.swift */; };
 		B3B00364203A690E0048A7CE /* ParallelMapCompletionClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00353203A690D0048A7CE /* ParallelMapCompletionClosure.swift */; };
 		B3B00365203A690E0048A7CE /* ParallelMapCompletionClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00353203A690D0048A7CE /* ParallelMapCompletionClosure.swift */; };
-		B3B00366203A690E0048A7CE /* ParallelMapOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00354203A690D0048A7CE /* ParallelMapOperation.swift */; };
-		B3B00367203A690E0048A7CE /* ParallelMapOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00354203A690D0048A7CE /* ParallelMapOperation.swift */; };
-		B3B00368203A690E0048A7CE /* ParallelMapOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00354203A690D0048A7CE /* ParallelMapOperation.swift */; };
-		B3B00369203A690E0048A7CE /* ParallelMapOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00354203A690D0048A7CE /* ParallelMapOperation.swift */; };
 		B3B0036A203A690E0048A7CE /* ParallelOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00355203A690D0048A7CE /* ParallelOperation.swift */; };
 		B3B0036B203A690E0048A7CE /* ParallelOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00355203A690D0048A7CE /* ParallelOperation.swift */; };
 		B3B0036C203A690E0048A7CE /* ParallelOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00355203A690D0048A7CE /* ParallelOperation.swift */; };
@@ -113,6 +116,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B321A82A2048896700D823E1 /* ParallelFlockPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallelFlockPerformanceTests.swift; sourceTree = "<group>"; };
 		B32840B5203B6172006053DA /* Brewfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Brewfile; sourceTree = "<group>"; };
 		B32840B6203B617B006053DA /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		B357A8CD203A1097004BD19E /* ParallelFlock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParallelFlock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +232,7 @@
 		B3B00326203A601F0048A7CE /* ParallelFlockTests */ = {
 			isa = PBXGroup;
 			children = (
+				B321A82A2048896700D823E1 /* ParallelFlockPerformanceTests.swift */,
 				B3B00327203A601F0048A7CE /* ParallelFlockTests.swift */,
 				B3B00339203A66040048A7CE /* Info-tvOS.plist */,
 				B3B00329203A601F0048A7CE /* Info-iOS.plist */,
@@ -749,12 +754,12 @@
 				B3B00377203A690E0048A7CE /* ParallelOperationStatus.swift in Sources */,
 				B3B0035B203A690E0048A7CE /* ParallelReduceOperation.swift in Sources */,
 				B3B00373203A690E0048A7CE /* ParallelOptions.swift in Sources */,
-				B3B00367203A690E0048A7CE /* ParallelMapOperation.swift in Sources */,
 				B357A8EF203A116C004BD19E /* Parallel.swift in Sources */,
 				B3B0035F203A690E0048A7CE /* ParallelMapItemClosure.swift in Sources */,
 				B3B0037B203A690E0048A7CE /* ParallelCompletionClosure.swift in Sources */,
 				B3B0036F203A690E0048A7CE /* ParallelReduceItemClosure.swift in Sources */,
 				B3B0036B203A690E0048A7CE /* ParallelOperation.swift in Sources */,
+				B31FA9B42048ADF4000CED17 /* ParallelMapOperation.swift in Sources */,
 				B3B00363203A690E0048A7CE /* ParallelMapCompletionClosure.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -766,12 +771,12 @@
 				B3B00378203A690E0048A7CE /* ParallelOperationStatus.swift in Sources */,
 				B3B0035C203A690E0048A7CE /* ParallelReduceOperation.swift in Sources */,
 				B3B00374203A690E0048A7CE /* ParallelOptions.swift in Sources */,
-				B3B00368203A690E0048A7CE /* ParallelMapOperation.swift in Sources */,
 				B357A8F0203A116C004BD19E /* Parallel.swift in Sources */,
 				B3B00360203A690E0048A7CE /* ParallelMapItemClosure.swift in Sources */,
 				B3B0037C203A690E0048A7CE /* ParallelCompletionClosure.swift in Sources */,
 				B3B00370203A690E0048A7CE /* ParallelReduceItemClosure.swift in Sources */,
 				B3B0036C203A690E0048A7CE /* ParallelOperation.swift in Sources */,
+				B31FA9B52048ADF5000CED17 /* ParallelMapOperation.swift in Sources */,
 				B3B00364203A690E0048A7CE /* ParallelMapCompletionClosure.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -783,12 +788,12 @@
 				B3B00379203A690E0048A7CE /* ParallelOperationStatus.swift in Sources */,
 				B3B0035D203A690E0048A7CE /* ParallelReduceOperation.swift in Sources */,
 				B3B00375203A690E0048A7CE /* ParallelOptions.swift in Sources */,
-				B3B00369203A690E0048A7CE /* ParallelMapOperation.swift in Sources */,
 				B357A8F1203A116D004BD19E /* Parallel.swift in Sources */,
 				B3B00361203A690E0048A7CE /* ParallelMapItemClosure.swift in Sources */,
 				B3B0037D203A690E0048A7CE /* ParallelCompletionClosure.swift in Sources */,
 				B3B00371203A690E0048A7CE /* ParallelReduceItemClosure.swift in Sources */,
 				B3B0036D203A690E0048A7CE /* ParallelOperation.swift in Sources */,
+				B31FA9B62048ADF5000CED17 /* ParallelMapOperation.swift in Sources */,
 				B3B00365203A690E0048A7CE /* ParallelMapCompletionClosure.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -798,6 +803,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3B00330203A61440048A7CE /* ParallelFlockTests.swift in Sources */,
+				B321A82B2048896700D823E1 /* ParallelFlockPerformanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -806,6 +812,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3B00340203A660B0048A7CE /* ParallelFlockTests.swift in Sources */,
+				B321A82C2048896700D823E1 /* ParallelFlockPerformanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -814,6 +821,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3B00350203A67400048A7CE /* ParallelFlockTests.swift in Sources */,
+				B321A82D2048896700D823E1 /* ParallelFlockPerformanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -824,12 +832,12 @@
 				B3B00376203A690E0048A7CE /* ParallelOperationStatus.swift in Sources */,
 				B3B0035A203A690E0048A7CE /* ParallelReduceOperation.swift in Sources */,
 				B3B00372203A690E0048A7CE /* ParallelOptions.swift in Sources */,
-				B3B00366203A690E0048A7CE /* ParallelMapOperation.swift in Sources */,
 				B3CD0D1A202B814D00A5D1A6 /* Parallel.swift in Sources */,
 				B3B0035E203A690E0048A7CE /* ParallelMapItemClosure.swift in Sources */,
 				B3B0037A203A690E0048A7CE /* ParallelCompletionClosure.swift in Sources */,
 				B3B0036E203A690E0048A7CE /* ParallelReduceItemClosure.swift in Sources */,
 				B3B0036A203A690E0048A7CE /* ParallelOperation.swift in Sources */,
+				B31FA9B32048ADF4000CED17 /* ParallelMapOperation.swift in Sources */,
 				B3B00362203A690E0048A7CE /* ParallelMapCompletionClosure.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
