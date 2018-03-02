@@ -16,7 +16,7 @@ class ParallelFlockTests: XCTestCase {
     }
 
     @objc func onTimer(_: Timer) {
-      XCTAssertGreaterThan(self.operation.progress, self.prevProgress)
+      XCTAssertGreaterThanOrEqual(self.operation.progress, self.prevProgress)
       self.prevProgress = self.operation.progress
       print(self.operation.progress)
     }
@@ -68,8 +68,9 @@ class ParallelFlockTests: XCTestCase {
 
     let watcher = OperationWatcher(operation: operation)
 
-    timer = Timer.scheduledTimer(timeInterval: 1.0, target: watcher, selector: #selector(OperationWatcher<ParallelMapOperation<UUID, String>>.onTimer(_:)), userInfo: nil, repeats: true)
+    timer = Timer.scheduledTimer(timeInterval: 0.1, target: watcher, selector: #selector(OperationWatcher<ParallelMapOperation<UUID, String>>.onTimer(_:)), userInfo: nil, repeats: true)
 
+    timer?.fire()
     wait(for: [exp], timeout: 300)
   }
 
