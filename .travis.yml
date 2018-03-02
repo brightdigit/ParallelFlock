@@ -93,7 +93,7 @@ before_install:
 - brew update && brew bundle
 - bundle install
 script:
-- xcodebuild -project ParallelFlock.xcodeproj -scheme "$SCHEME" -destination "$PLATFORM" -enableCodeCoverage YES test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -skip-testing:ParallelFlockTests_$SUFFIX/ParallelFlockPerformanceTests | xcpretty -f `xcpretty-travis-formatter`
+- xcodebuild -project ParallelFlock.xcodeproj -scheme "$SCHEME" -destination "$PLATFORM" -enableCodeCoverage YES test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -skip-testing:ParallelFlockTests_$SUFFIX/ParallelFlockPerformanceTests 
 after_success:
 - bash <(curl -s https://codecov.io/bash) -c -F "$PLATFORM"
 
