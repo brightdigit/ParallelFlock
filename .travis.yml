@@ -26,8 +26,9 @@ matrix:
     - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K,OS=11.3" SUFFIX="tvOS"', os: osx, language: objective-c}
     - {osx_image: xcode9.2,         env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K (at 1080p),OS=11.2" SUFFIX="tvOS"', os: osx, language: objective-c}
 before_install:
-- brew update && brew bundle
+- brew bundle
 - bundle install
+- defaults write com.apple.dt.Xcode BuildSystemScheduleInherentlyParallelCommandsExclusively -bool NO
 script:
 - xcodebuild -project ParallelFlock.xcodeproj -scheme "$SCHEME" -destination "$PLATFORM" -enableCodeCoverage YES test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -skip-testing:ParallelFlockTests_$SUFFIX/ParallelFlockPerformanceTests | xcpretty -f `xcpretty-travis-formatter`
 
