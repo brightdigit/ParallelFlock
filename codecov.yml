@@ -1,2 +1,2 @@
 ignore:
-  - "path/to/folder"  # ignore folders and all its contents
+  - "ParallelFlockTests"  # ignore folders and all its contents
