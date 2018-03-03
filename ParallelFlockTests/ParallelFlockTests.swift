@@ -68,7 +68,11 @@ class ParallelFlockTests: XCTestCase {
 
     let watcher = OperationWatcher(operation: operation)
 
-    timer = Timer.scheduledTimer(timeInterval: 0.1, target: watcher, selector: #selector(OperationWatcher<ParallelMapOperation<UUID, String>>.onTimer(_:)), userInfo: nil, repeats: true)
+    timer = Timer.scheduledTimer(
+      timeInterval: 0.1,
+      target: watcher,
+      selector: #selector(OperationWatcher<ParallelMapOperation<UUID, String>>.onTimer(_:)),
+      userInfo: nil, repeats: true)
 
     timer?.fire()
     wait(for: [exp], timeout: 300)
