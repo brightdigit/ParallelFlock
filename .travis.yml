@@ -6,15 +6,15 @@ branches:
     - release/1.0.0
 matrix:
   include:
-    - {osx_image: xcode9.2,         env: 'SCHEME="macOS Framework" PLATFORM="platform=OS X,arch=x86_64" SUFFIX="macOS" TAG="xcode9.2,macOS" SUFFIX="macOS"', os: osx, language: objective-c}
-    - {osx_image: xcode9.3beta,     env: 'SCHEME="macOS Framework" PLATFORM="platform=OS X,arch=x86_64" SUFFIX="macOS" TAG="xcode9.3,macOS" SUFFIX="macOS"', os: osx, language: objective-c}
-    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 4s,OS=8.1" TAG="xcode9.3,iOS8.1,iPhone4s" SUFFIX="iOS"', os: osx, language: objective-c}
-    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 4s,OS=9.3" TAG="xcode9.3,iOS9.3,iPhone4s" SUFFIX="iOS"', os: osx, language: objective-c}
-    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=10.3.1"  TAG="xcode9.3,iOS10.3,iPhone5" SUFFIX="iOS"', os: osx, language: objective-c}
-    - {osx_image: xcode9.2,         env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (10.5-inch),OS=11.2" TAG="xcode9.2,iOS11.2,iPadPro10.5" SUFFIX="iOS"', os: osx, language: objective-c}
-    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone X,OS=11.3" TAG="xcode9.3,iOS11.3,iPadPro10.5" SUFFIX="iOS"', os: osx, language: objective-c}
-    - {osx_image: xcode9.2,         env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=9.2" TAG="xcode9.2,tvOS9.2,AppleTV1080p" SUFFIX="tvOS"', os: osx, language: objective-c}
-    - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K,OS=11.3"  TAG="xcode9.3,tvOS11.3,AppleTV4K" SUFFIX="tvOS"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,         env: 'SCHEME="macOS Framework" PLATFORM="platform=OS X,arch=x86_64" SUFFIX="macOS" TAG="xcode9_2,macOS" SUFFIX="macOS"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="macOS Framework" PLATFORM="platform=OS X,arch=x86_64" SUFFIX="macOS" TAG="xcode9_3,macOS" SUFFIX="macOS"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 4s,OS=8.1" TAG="xcode9_3,iOS8_1,iPhone4s" SUFFIX="iOS"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 4s,OS=9.3" TAG="xcode9_3,iOS9_3,iPhone4s" SUFFIX="iOS"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone 5,OS=10.3.1"  TAG="xcode9_3,iOS10_3,iPhone5" SUFFIX="iOS"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,         env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPad Pro (10.5-inch),OS=11.2" TAG="xcode9_2,iOS11_2,iPadPro10_5" SUFFIX="iOS"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="iOS Framework" PLATFORM="platform=iOS Simulator,name=iPhone X,OS=11.3" TAG="xcode9_3,iOS11_3,iPadPro10_5" SUFFIX="iOS"', os: osx, language: objective-c}
+    - {osx_image: xcode9.2,         env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 1080p,OS=9.2" TAG="xcode9_2,tvOS9_2,AppleTV1080p" SUFFIX="tvOS"', os: osx, language: objective-c}
+    - {osx_image: xcode9.3beta,     env: 'SCHEME="tvOS Framework" PLATFORM="platform=tvOS Simulator,name=Apple TV 4K,OS=11.3"  TAG="xcode9_3,tvOS11_3,AppleTV4K" SUFFIX="tvOS"', os: osx, language: objective-c}
 before_install:
 - brew bundle
 - bundle install
