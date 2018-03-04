@@ -55,11 +55,7 @@ class MasterViewController: UITableViewController {
     self.navigationItem.titleView = progressView
 
     // navigationItem.rightBarButtonItems = [activityButton]
-    let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-      DispatchQueue.main.async {
-        self.progressView.setProgress(Float(self.operation?.progress ?? 0), animated: true)
-      }
-    }
+    let timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(MasterViewController.updateProgress(_:)), userInfo: nil, repeats: true)
 
     self.timer = timer
 
@@ -80,6 +76,12 @@ class MasterViewController: UITableViewController {
           })
         }
       }
+    }
+  }
+
+  @objc func updateProgress(_: Timer) {
+    DispatchQueue.main.async {
+      self.progressView.setProgress(Float(self.operation?.progress ?? 0), animated: true)
     }
   }
 
