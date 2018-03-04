@@ -20,7 +20,7 @@ before_install:
 - bundle install
 - defaults write com.apple.dt.Xcode BuildSystemScheduleInherentlyParallelCommandsExclusively -bool NO
 script:
-- xcodebuild -project ParallelFlock.xcodeproj -scheme "$SCHEME" -destination "$PLATFORM" -enableCodeCoverage YES ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -skip-testing:ParallelFlockTests_$SUFFIX/ParallelFlockPerformanceTests 
+- xcodebuild -project ParallelFlock.xcodeproj -scheme "$SCHEME" -destination "$PLATFORM" -enableCodeCoverage YES ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -skip-testing:ParallelFlockTests_$SUFFIX/ParallelFlockPerformanceTests | xcpretty -f `xcpretty-travis-formatter`
 after_success:
 - bash <(curl -s https://codecov.io/bash) -g Tests -X xcodeplist -cF $TAG -t ff14a9cc-e3a8-4938-8d3b-bf29a022b9b4
 
