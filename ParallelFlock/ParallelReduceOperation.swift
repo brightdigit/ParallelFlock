@@ -10,10 +10,14 @@ public class ParallelReduceOperation<T>: ParallelOperation {
 
   public private(set) var status: ParallelOperationStatus<T> = .initialized
   public private(set) var temporaryResult: [T]
-  public private(set) var iterationCount = 0
+  public private(set) var iterationCount: Int = 0
 
   public var maxIterations: Int {
-    return Int(ceil(log2(Double(self.source.count))))
+    let count: Float = Float(self.source.count)
+    let multiplier: Float = 2.0
+    let maxIterationsFloat: Float = log2f(count * multiplier)
+    let maxIterationsInt: Int = Int(maxIterationsFloat)
+    return maxIterationsInt
   }
 
   public init(

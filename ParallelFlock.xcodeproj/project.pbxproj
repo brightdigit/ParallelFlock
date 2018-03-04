@@ -1302,7 +1302,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/ParallelFlock/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-Onone -Xfrontend -debug-time-function-bodies -Xfrontend -warn-long-expression-type-checking=30 -Xfrontend -warn-long-function-bodies=30";
+				OTHER_SWIFT_FLAGS = "-Onone -Xfrontend -debug-time-function-bodies -Xfrontend -warn-long-expression-type-checking=45 -Xfrontend -warn-long-function-bodies=45";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.brightdigit.ParallelFlock-iOS";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";

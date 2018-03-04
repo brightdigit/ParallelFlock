@@ -26,12 +26,6 @@ public class ParallelMapOperation<T, U>: ParallelOperation {
     self.completion = completion
     self.itemQueue = queue ?? ParallelOptions.defaultQueue
     self.mainQueue = queue ?? ParallelOptions.defaultQueue
-//    self.arrayQueue = arrayQueue ?? DispatchQueue(
-//      label: "arrayQueue",
-//      qos: ParallelOptions.defaultQos,
-//      attributes: .concurrent,
-//      autoreleaseFrequency: .inherit,
-//      target: nil)
 
     self.temporaryPointer = UnsafeMutablePointer<U>.allocate(capacity: self.memoryCapacity)
   }
@@ -44,30 +38,32 @@ public class ParallelMapOperation<T, U>: ParallelOperation {
       return
     }
 
-    var count = 0
     self.status = .running(0)
-    let group = DispatchGroup()
 
-    self.mainQueue.async {
-      for (index, item) in self.source.enumerated() {
-        group.enter()
-        self.itemQueue.async(execute: {
-          self.itemClosure(item, { result in
-            self.temporaryPointer[index] = result
-            count += 1
-            self.status = .running(count)
-            group.leave()
-          })
+    self.mainQueue.async(execute: self.run)
+  }
+
+  func run() {
+    var count: Int = 0
+    let group = DispatchGroup()
+    for (offset, element): (Int, T) in self.source.enumerated() {
+      group.enter()
+      self.itemQueue.async(execute: {
+        self.itemClosure(element, { result in
+          self.temporaryPointer[offset] = result
+          count += 1
+          self.status = .running(count)
+          group.leave()
         })
-      }
-      group.notify(queue: self.mainQueue, execute: {
-        let buffer = UnsafeBufferPointer<U>.init(start: self.temporaryPointer, count: self.source.count)
-        let result = [U](buffer)
-        assert(result.count == self.source.count)
-        self.status = .completed(result)
-        self.completion(result)
       })
     }
+    group.notify(queue: self.mainQueue, execute: {
+      let buffer = UnsafeBufferPointer<U>.init(start: self.temporaryPointer, count: self.source.count)
+      let result = [U](buffer)
+      assert(result.count == self.source.count)
+      self.status = .completed(result)
+      self.completion(result)
+    })
   }
 
   deinit {
