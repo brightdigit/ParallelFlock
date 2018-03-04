@@ -116,6 +116,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B30625BD204AE0A4009D1B4B /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		B321A82A2048896700D823E1 /* ParallelFlockPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallelFlockPerformanceTests.swift; sourceTree = "<group>"; };
 		B32840B5203B6172006053DA /* Brewfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Brewfile; sourceTree = "<group>"; };
 		B32840B6203B617B006053DA /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -244,6 +245,7 @@
 		B3F2059C202B7EF90088B443 = {
 			isa = PBXGroup;
 			children = (
+				B30625BD204AE0A4009D1B4B /* Gemfile */,
 				B3A0AB88203B6C86001D01F4 /* .gitignore */,
 				B3A0AB86203B6C86001D01F4 /* .travis.yml */,
 				B3A0AB87203B6C86001D01F4 /* README.md */,
@@ -1341,7 +1343,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MLT7M394S7;
 				INFOPLIST_FILE = "ParallelFlockApp-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.brightdigit.ParallelFlockApp-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1359,7 +1361,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MLT7M394S7;
 				INFOPLIST_FILE = "ParallelFlockApp-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.brightdigit.ParallelFlockApp-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
