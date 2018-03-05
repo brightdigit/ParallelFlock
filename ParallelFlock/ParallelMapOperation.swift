@@ -14,14 +14,14 @@ public class ParallelMapOperation<T, U> {
     source: [T],
     itemClosure: @escaping (T, @escaping (U) -> Void) -> Void,
     completion: @escaping ([U]) -> Void,
-    queue: DispatchQueue? = nil,
-    itemQueue _: DispatchQueue? = nil,
+    mainQueue: DispatchQueue? = nil,
+    itemQueue: DispatchQueue? = nil,
     arrayQueue: DispatchQueue? = nil) {
     self.source = source
     self.itemClosure = itemClosure
     self.completion = completion
-    self.itemQueue = queue ?? ParallelOptions.defaultQueue
-    self.mainQueue = queue ?? ParallelOptions.defaultQueue
+    self.itemQueue = mainQueue ?? ParallelOptions.defaultQueue
+    self.mainQueue = itemQueue ?? ParallelOptions.defaultQueue
     self.arrayQueue = arrayQueue ?? DispatchQueue(
       label: "arrayQueue",
       qos: ParallelOptions.defaultQos,
