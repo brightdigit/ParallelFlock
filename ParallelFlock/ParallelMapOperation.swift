@@ -2,13 +2,12 @@ import Foundation
 
 public class ParallelMapOperation<T, U> {
   public let source: [T]
-  public let itemClosure: ParallelMapItemClosure<T, U>
-  public let completion: ParallelMapCompletionClosure<U>
+  public let itemClosure: (T, @escaping (U) -> Void) -> Void
+  public let completion: ([U]) -> Void
   public let itemQueue: DispatchQueue
   public let mainQueue: DispatchQueue
   public let arrayQueue: DispatchQueue
 
-  public private(set) var status = ParallelOperationStatus<[U]>.initialized
   public private(set) var temporaryResult: [U?]
 
   public var sourceCount: Int {
@@ -16,8 +15,8 @@ public class ParallelMapOperation<T, U> {
   }
   public init(
     source: [T],
-    itemClosure: @escaping ParallelMapItemClosure<T, U>,
-    completion: @escaping ParallelMapCompletionClosure<U>,
+    itemClosure: @escaping (T, @escaping (U) -> Void) -> Void,
+    completion: @escaping ([U]) -> Void,
     queue: DispatchQueue? = nil,
     itemQueue _: DispatchQueue? = nil,
     arrayQueue: DispatchQueue? = nil) {
@@ -37,15 +36,6 @@ public class ParallelMapOperation<T, U> {
   }
 
   public func begin() {
-    switch self.status {
-    case .initialized:
-      break
-    default:
-      return
-    }
-
-    var count = 0
-    self.status = .running(0)
     let group = DispatchGroup()
 
     self.mainQueue.async {
@@ -55,8 +45,6 @@ public class ParallelMapOperation<T, U> {
           self.itemClosure(item, { result in
             self.arrayQueue.async(group: nil, qos: ParallelOptions.defaultQos, flags: .barrier, execute: {
               self.temporaryResult[index] = result
-              count += 1
-              self.status = .running(count)
               group.leave()
             })
           })
@@ -71,7 +59,6 @@ public class ParallelMapOperation<T, U> {
           result = self.temporaryResult.flatMap { $0 }
         #endif
         assert(result.count == self.source.count)
-        self.status = .completed(result)
         self.completion(result)
       })
     }
