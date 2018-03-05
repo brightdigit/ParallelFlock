@@ -40,28 +40,18 @@ class MasterViewController: UITableViewController {
   var objects: [UInt32]?
   var factors: [UInt32: [UInt32]]?
   var operation: ParallelMapOperation<UInt32, [UInt32]>?
-  weak var progressView: UIProgressView!
-  var timer: Timer!
+  weak var activityIndicatorView: UIActivityIndicatorView!
 
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
 
-    let progressView = UIProgressView(progressViewStyle: .default)
+    let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    activityIndicatorView.startAnimating()
+    self.navigationItem.titleView = activityIndicatorView
 
-    self.progressView = progressView
-    progressView.sizeToFit()
-    // let activityButton = UIBarButtonItem(customView: progressView)
-    self.navigationItem.titleView = progressView
-
-    // navigationItem.rightBarButtonItems = [activityButton]
-    let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-      DispatchQueue.main.async {
-        self.progressView.setProgress(Float(self.operation?.progress ?? 0), animated: true)
-      }
-    }
-
-    self.timer = timer
+    self.tableView.alpha = 0.7
+    self.view.backgroundColor = .white
 
     DispatchQueue.global(qos: .background).async {
       let objects = (0 ... 500_000).map { _ in arc4random_uniform(1_000_000) + 1_000_000 }.unique().sorted()
@@ -70,16 +60,18 @@ class MasterViewController: UITableViewController {
         self.tableView.reloadData()
       }
       print(objects.count)
-      self.operation = objects.parallel.map(primeFactors) { factorValues in
+      self.operation = objects.parallel.map({
+        $1(primeFactors(value: $0))
+      }, completion: { factorValues in
         self.factors = [UInt32: [UInt32]].init(uniqueKeysWithValues: zip(objects, factorValues))
         self.operation = nil
-        self.timer.invalidate()
         DispatchQueue.main.async {
           UIView.animate(withDuration: 1.0, animations: {
             self.navigationItem.titleView = nil
+            self.tableView.alpha = 1.0
           })
         }
-      }
+      })
     }
   }
 
