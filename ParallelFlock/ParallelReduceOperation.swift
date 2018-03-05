@@ -53,12 +53,18 @@ public class ParallelReduceOperation<T>: ParallelOperation {
     self.mainQueue.async(execute: self.iterate)
   }
 
+  public func zipArray(_ array: [T]) -> (Zip2Sequence<ArraySlice<T>, ArraySlice<T>>, T?) {
+    let right = array[array.count / 2 ..< array.count]
+    let left = array[0 ..< array.count / 2]
+    let zipValues = zip(left, right)
+    let remainder: T? = right.count != left.count ? right.last : nil
+    return (zipValues, remainder)
+  }
+
   public func iterate() {
     if self.iterationCount <= self.maxIterations && self.temporaryResult.count > 1 {
       self.iterationCount += 1
-      let right = self.temporaryResult[self.temporaryResult.count / 2 ..< self.temporaryResult.count]
-      let left = self.temporaryResult[0 ..< self.temporaryResult.count / 2]
-      let zipValues = zip(left, right)
+      let (zipValues, last) = zipArray(self.temporaryResult)
       var values = [T]()
       let group = DispatchGroup()
       for (left, right) in zipValues {
@@ -73,7 +79,7 @@ public class ParallelReduceOperation<T>: ParallelOperation {
         }
       }
       group.notify(queue: self.itemQueue) {
-        if let last = right.last, right.count != left.count {
+        if let last = last {
           values.append(last)
         }
         self.temporaryResult = values
