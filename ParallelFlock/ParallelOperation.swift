@@ -1,39 +1,24 @@
 import Foundation
 
 public protocol ParallelOperation {
+  associatedtype InputElementType
+  associatedtype OutputType
   func begin()
-  var sourceCount: Int { get }
-  var completedCount: Int { get }
+  var source: [InputElementType] { get }
+  var status: ParallelOperationStatus<OutputType> { get }
 }
 
-extension ParallelOperation {
+public extension ParallelOperation {
   public var progress: Double {
-    return Double(self.completedCount) / Double(self.sourceCount)
-  }
-}
-
-extension ParallelReduceOperation: ParallelOperation {
-  public var completedCount: Int {
     switch self.status {
     case .initialized:
-      return 0
-    case let .running(count):
-      return count
+      return 0.0
     case .completed:
-      return sourceCount
-    }
-  }
-}
-
-extension ParallelMapOperation: ParallelOperation {
-  public var completedCount: Int {
-    switch self.status {
-    case .initialized:
-      return 0
+      return 1.0
     case let .running(count):
-      return count
-    case .completed:
-      return sourceCount
+      return Double(count) / Double(source.count)
+    case .invalid:
+      return Double.nan
     }
   }
 }
