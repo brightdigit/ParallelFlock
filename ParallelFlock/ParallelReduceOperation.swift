@@ -1,21 +1,23 @@
 import Foundation
 
-public class ParallelReduceOperation<T> {
+public class ParallelReduceOperation<T>: ParallelOperation {
   public let source: [T]
   public let itemClosure: ParallelReduceItemClosure<T>
   public let completion: ParallelCompletionClosure<T>
-  public let queue: DispatchQueue
+  public let itemQueue: DispatchQueue
+  public let mainQueue: DispatchQueue
   public let arrayQueue: DispatchQueue
 
   public private(set) var status: ParallelOperationStatus<T> = .initialized
   public private(set) var temporaryResult: [T]
-  public private(set) var iterationCount = 0
+  public private(set) var iterationCount: Int = 0
 
-  public var sourceCount: Int {
-    return self.source.count
-  }
   public var maxIterations: Int {
-    return Int(ceil(log2(Double(self.source.count))))
+    let count: Float = Float(self.source.count)
+    let multiplier: Float = 2.0
+    let maxIterationsFloat: Float = log2f(count * multiplier)
+    let maxIterationsInt: Int = Int(maxIterationsFloat)
+    return maxIterationsInt
   }
 
   public init(
@@ -23,12 +25,13 @@ public class ParallelReduceOperation<T> {
     itemClosure: @escaping ParallelReduceItemClosure<T>,
     completion: @escaping ParallelCompletionClosure<T>,
     queue: DispatchQueue? = nil,
+    itemQueue _: DispatchQueue? = nil,
     arrayQueue: DispatchQueue? = nil) {
     self.source = source
     self.itemClosure = itemClosure
     self.completion = completion
-    self.queue = queue ?? ParallelOptions.defaultQueue
-
+    self.itemQueue = queue ?? ParallelOptions.defaultQueue
+    self.mainQueue = queue ?? ParallelOptions.defaultQueue
     self.arrayQueue = arrayQueue ?? DispatchQueue(
       label: "arrayQueue",
       qos: ParallelOptions.defaultQos,
@@ -47,20 +50,26 @@ public class ParallelReduceOperation<T> {
       return
     }
     self.status = .running(0)
-    self.iterate()
+    self.mainQueue.async(execute: self.iterate)
+  }
+
+  public func zipArray(_ array: [T]) -> (Zip2Sequence<ArraySlice<T>, ArraySlice<T>>, T?) {
+    let right = array[array.count / 2 ..< array.count]
+    let left = array[0 ..< array.count / 2]
+    let zipValues = zip(left, right)
+    let remainder: T? = right.count != left.count ? right.last : nil
+    return (zipValues, remainder)
   }
 
   public func iterate() {
     if self.iterationCount <= self.maxIterations && self.temporaryResult.count > 1 {
       self.iterationCount += 1
-      let right = self.temporaryResult[self.temporaryResult.count / 2 ..< self.temporaryResult.count]
-      let left = self.temporaryResult[0 ..< self.temporaryResult.count / 2]
-      let zipValues = zip(left, right)
+      let (zipValues, last) = zipArray(self.temporaryResult)
       var values = [T]()
       let group = DispatchGroup()
       for (left, right) in zipValues {
         group.enter()
-        self.queue.async {
+        self.itemQueue.async {
           self.itemClosure(left, right, { reduced in
             self.arrayQueue.async(group: nil, qos: ParallelOptions.defaultQos, flags: .barrier, execute: {
               values.append(reduced)
@@ -69,8 +78,8 @@ public class ParallelReduceOperation<T> {
           })
         }
       }
-      group.notify(queue: self.queue) {
-        if let last = right.last, right.count != left.count {
+      group.notify(queue: self.itemQueue) {
+        if let last = last {
           values.append(last)
         }
         self.temporaryResult = values

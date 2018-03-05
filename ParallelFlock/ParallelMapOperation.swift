@@ -11,21 +11,18 @@ public class ParallelMapOperation<T, U> {
   public private(set) var status = ParallelOperationStatus<[U]>.initialized
   public private(set) var temporaryResult: [U?]
 
-  public var sourceCount: Int {
-    return self.source.count
-  }
   public init(
     source: [T],
     itemClosure: @escaping ParallelMapItemClosure<T, U>,
     completion: @escaping ParallelMapCompletionClosure<U>,
-    queue: DispatchQueue? = nil,
-    itemQueue _: DispatchQueue? = nil,
+    mainQueue: DispatchQueue? = nil,
+    itemQueue: DispatchQueue? = nil,
     arrayQueue: DispatchQueue? = nil) {
     self.source = source
     self.itemClosure = itemClosure
     self.completion = completion
-    self.itemQueue = queue ?? ParallelOptions.defaultQueue
-    self.mainQueue = queue ?? ParallelOptions.defaultQueue
+    self.itemQueue = mainQueue ?? ParallelOptions.defaultQueue
+    self.mainQueue = itemQueue ?? ParallelOptions.defaultQueue
     self.arrayQueue = arrayQueue ?? DispatchQueue(
       label: "arrayQueue",
       qos: ParallelOptions.defaultQos,
