@@ -10,9 +10,6 @@ public class ParallelMapOperation<T, U> {
 
   public private(set) var temporaryResult: [U?]
 
-  public var sourceCount: Int {
-    return self.source.count
-  }
   public init(
     source: [T],
     itemClosure: @escaping (T, @escaping (U) -> Void) -> Void,
