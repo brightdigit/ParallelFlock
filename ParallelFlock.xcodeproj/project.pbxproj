@@ -19,6 +19,10 @@
 		B3033699204E272000BA971D /* ParallelOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00357203A690D0048A7CE /* ParallelOptions.swift */; };
 		B303369A204E272100BA971D /* ParallelOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00357203A690D0048A7CE /* ParallelOptions.swift */; };
 		B303369B204E272100BA971D /* ParallelOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00357203A690D0048A7CE /* ParallelOptions.swift */; };
+		B303369D204E287200BA971D /* ParallelOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B303369C204E287200BA971D /* ParallelOperation.swift */; };
+		B303369E204E287200BA971D /* ParallelOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B303369C204E287200BA971D /* ParallelOperation.swift */; };
+		B303369F204E287200BA971D /* ParallelOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B303369C204E287200BA971D /* ParallelOperation.swift */; };
+		B30336A0204E287200BA971D /* ParallelOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B303369C204E287200BA971D /* ParallelOperation.swift */; };
 		B357A8EF203A116C004BD19E /* Parallel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CD0D19202B814D00A5D1A6 /* Parallel.swift */; };
 		B357A8F0203A116C004BD19E /* Parallel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CD0D19202B814D00A5D1A6 /* Parallel.swift */; };
 		B357A8F1203A116D004BD19E /* Parallel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CD0D19202B814D00A5D1A6 /* Parallel.swift */; };
@@ -116,6 +120,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B303369C204E287200BA971D /* ParallelOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallelOperation.swift; sourceTree = "<group>"; };
 		B30625BD204AE0A4009D1B4B /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		B32840B5203B6172006053DA /* Brewfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Brewfile; sourceTree = "<group>"; };
 		B32840B6203B617B006053DA /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -274,6 +279,7 @@
 		B3F205A8202B7EF90088B443 /* ParallelFlock */ = {
 			isa = PBXGroup;
 			children = (
+				B303369C204E287200BA971D /* ParallelOperation.swift */,
 				B368EA59204DD144001988CF /* ParallelCompletionClosure.swift */,
 				B368EA55204DD143001988CF /* ParallelMapCompletionClosure.swift */,
 				B368EA54204DD143001988CF /* ParallelMapItemClosure.swift */,
@@ -757,6 +763,7 @@
 				B3033699204E272000BA971D /* ParallelOptions.swift in Sources */,
 				B368EA5F204DD144001988CF /* ParallelMapItemClosure.swift in Sources */,
 				B368EA6B204DD144001988CF /* ParallelReduceItemClosure.swift in Sources */,
+				B303369E204E287200BA971D /* ParallelOperation.swift in Sources */,
 				B368EA5B204DD144001988CF /* ParallelReduceOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -773,6 +780,7 @@
 				B303369A204E272100BA971D /* ParallelOptions.swift in Sources */,
 				B368EA60204DD144001988CF /* ParallelMapItemClosure.swift in Sources */,
 				B368EA6C204DD144001988CF /* ParallelReduceItemClosure.swift in Sources */,
+				B303369F204E287200BA971D /* ParallelOperation.swift in Sources */,
 				B368EA5C204DD144001988CF /* ParallelReduceOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -789,6 +797,7 @@
 				B303369B204E272100BA971D /* ParallelOptions.swift in Sources */,
 				B368EA61204DD144001988CF /* ParallelMapItemClosure.swift in Sources */,
 				B368EA6D204DD144001988CF /* ParallelReduceItemClosure.swift in Sources */,
+				B30336A0204E287200BA971D /* ParallelOperation.swift in Sources */,
 				B368EA5D204DD144001988CF /* ParallelReduceOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -835,6 +844,7 @@
 				B3008788204DD022004C7078 /* ParallelOptions.swift in Sources */,
 				B368EA5E204DD144001988CF /* ParallelMapItemClosure.swift in Sources */,
 				B368EA62204DD144001988CF /* ParallelMapCompletionClosure.swift in Sources */,
+				B303369D204E287200BA971D /* ParallelOperation.swift in Sources */,
 				B3008782204DD022004C7078 /* (null) in Sources */,
 				B3008789204DD022004C7078 /* (null) in Sources */,
 				B3008785204DD022004C7078 /* ParallelMapOperation.swift in Sources */,
