@@ -16,6 +16,9 @@
 		B3008788204DD022004C7078 /* ParallelOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00357203A690D0048A7CE /* ParallelOptions.swift */; };
 		B3008789204DD022004C7078 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		B300878A204DD022004C7078 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		B3033699204E272000BA971D /* ParallelOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00357203A690D0048A7CE /* ParallelOptions.swift */; };
+		B303369A204E272100BA971D /* ParallelOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00357203A690D0048A7CE /* ParallelOptions.swift */; };
+		B303369B204E272100BA971D /* ParallelOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00357203A690D0048A7CE /* ParallelOptions.swift */; };
 		B357A8EF203A116C004BD19E /* Parallel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CD0D19202B814D00A5D1A6 /* Parallel.swift */; };
 		B357A8F0203A116C004BD19E /* Parallel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CD0D19202B814D00A5D1A6 /* Parallel.swift */; };
 		B357A8F1203A116D004BD19E /* Parallel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CD0D19202B814D00A5D1A6 /* Parallel.swift */; };
@@ -34,10 +37,6 @@
 		B368EA63204DD144001988CF /* ParallelMapCompletionClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B368EA55204DD143001988CF /* ParallelMapCompletionClosure.swift */; };
 		B368EA64204DD144001988CF /* ParallelMapCompletionClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B368EA55204DD143001988CF /* ParallelMapCompletionClosure.swift */; };
 		B368EA65204DD144001988CF /* ParallelMapCompletionClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B368EA55204DD143001988CF /* ParallelMapCompletionClosure.swift */; };
-		B368EA66204DD144001988CF /* ParallelOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B368EA56204DD143001988CF /* ParallelOperation.swift */; };
-		B368EA67204DD144001988CF /* ParallelOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B368EA56204DD143001988CF /* ParallelOperation.swift */; };
-		B368EA68204DD144001988CF /* ParallelOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B368EA56204DD143001988CF /* ParallelOperation.swift */; };
-		B368EA69204DD144001988CF /* ParallelOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B368EA56204DD143001988CF /* ParallelOperation.swift */; };
 		B368EA6A204DD144001988CF /* ParallelReduceItemClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B368EA57204DD144001988CF /* ParallelReduceItemClosure.swift */; };
 		B368EA6B204DD144001988CF /* ParallelReduceItemClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B368EA57204DD144001988CF /* ParallelReduceItemClosure.swift */; };
 		B368EA6C204DD144001988CF /* ParallelReduceItemClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B368EA57204DD144001988CF /* ParallelReduceItemClosure.swift */; };
@@ -129,7 +128,6 @@
 		B368EA53204DD143001988CF /* ParallelReduceOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallelReduceOperation.swift; sourceTree = "<group>"; };
 		B368EA54204DD143001988CF /* ParallelMapItemClosure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallelMapItemClosure.swift; sourceTree = "<group>"; };
 		B368EA55204DD143001988CF /* ParallelMapCompletionClosure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallelMapCompletionClosure.swift; sourceTree = "<group>"; };
-		B368EA56204DD143001988CF /* ParallelOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallelOperation.swift; sourceTree = "<group>"; };
 		B368EA57204DD144001988CF /* ParallelReduceItemClosure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallelReduceItemClosure.swift; sourceTree = "<group>"; };
 		B368EA58204DD144001988CF /* ParallelOperationStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallelOperationStatus.swift; sourceTree = "<group>"; };
 		B368EA59204DD144001988CF /* ParallelCompletionClosure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallelCompletionClosure.swift; sourceTree = "<group>"; };
@@ -279,7 +277,6 @@
 				B368EA59204DD144001988CF /* ParallelCompletionClosure.swift */,
 				B368EA55204DD143001988CF /* ParallelMapCompletionClosure.swift */,
 				B368EA54204DD143001988CF /* ParallelMapItemClosure.swift */,
-				B368EA56204DD143001988CF /* ParallelOperation.swift */,
 				B368EA58204DD144001988CF /* ParallelOperationStatus.swift */,
 				B368EA57204DD144001988CF /* ParallelReduceItemClosure.swift */,
 				B368EA53204DD143001988CF /* ParallelReduceOperation.swift */,
@@ -757,9 +754,9 @@
 				B3B00367203A690E0048A7CE /* ParallelMapOperation.swift in Sources */,
 				B368EA6F204DD144001988CF /* ParallelOperationStatus.swift in Sources */,
 				B357A8EF203A116C004BD19E /* Parallel.swift in Sources */,
+				B3033699204E272000BA971D /* ParallelOptions.swift in Sources */,
 				B368EA5F204DD144001988CF /* ParallelMapItemClosure.swift in Sources */,
 				B368EA6B204DD144001988CF /* ParallelReduceItemClosure.swift in Sources */,
-				B368EA67204DD144001988CF /* ParallelOperation.swift in Sources */,
 				B368EA5B204DD144001988CF /* ParallelReduceOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -773,9 +770,9 @@
 				B3B00368203A690E0048A7CE /* ParallelMapOperation.swift in Sources */,
 				B368EA70204DD144001988CF /* ParallelOperationStatus.swift in Sources */,
 				B357A8F0203A116C004BD19E /* Parallel.swift in Sources */,
+				B303369A204E272100BA971D /* ParallelOptions.swift in Sources */,
 				B368EA60204DD144001988CF /* ParallelMapItemClosure.swift in Sources */,
 				B368EA6C204DD144001988CF /* ParallelReduceItemClosure.swift in Sources */,
-				B368EA68204DD144001988CF /* ParallelOperation.swift in Sources */,
 				B368EA5C204DD144001988CF /* ParallelReduceOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -789,9 +786,9 @@
 				B3B00369203A690E0048A7CE /* ParallelMapOperation.swift in Sources */,
 				B368EA71204DD144001988CF /* ParallelOperationStatus.swift in Sources */,
 				B357A8F1203A116D004BD19E /* Parallel.swift in Sources */,
+				B303369B204E272100BA971D /* ParallelOptions.swift in Sources */,
 				B368EA61204DD144001988CF /* ParallelMapItemClosure.swift in Sources */,
 				B368EA6D204DD144001988CF /* ParallelReduceItemClosure.swift in Sources */,
-				B368EA69204DD144001988CF /* ParallelOperation.swift in Sources */,
 				B368EA5D204DD144001988CF /* ParallelReduceOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -838,7 +835,6 @@
 				B3008788204DD022004C7078 /* ParallelOptions.swift in Sources */,
 				B368EA5E204DD144001988CF /* ParallelMapItemClosure.swift in Sources */,
 				B368EA62204DD144001988CF /* ParallelMapCompletionClosure.swift in Sources */,
-				B368EA66204DD144001988CF /* ParallelOperation.swift in Sources */,
 				B3008782204DD022004C7078 /* (null) in Sources */,
 				B3008789204DD022004C7078 /* (null) in Sources */,
 				B3008785204DD022004C7078 /* ParallelMapOperation.swift in Sources */,
