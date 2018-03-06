@@ -1,1 +1,13 @@
 # ParallelFlock
+## Categories
+* [Structs](docs/Structs.md)
+* [Extensions](docs/Extensions.md)
+* [Classes](docs/Classes.md)
+## Types
+### Classes
+* [Parallel](docs/Classes/Parallel.md)
+* [ParallelMapOperation](docs/Classes/ParallelMapOperation.md)
+### Extensions
+* [Array](docs/Extensions/Array.md)
+### Structs
+* [ParallelOptions](docs/Structs/ParallelOptions.md)

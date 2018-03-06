@@ -1,0 +1,138 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/leo/Documents/Projects/ParallelFlock/ParallelFlock/Parallel.swift",
+      "line": null,
+      "symbol": "Parallel",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/leo/Documents/Projects/ParallelFlock/ParallelFlock/Parallel.swift",
+      "line": 3,
+      "symbol": "Parallel",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/leo/Documents/Projects/ParallelFlock/ParallelFlock/Parallel.swift",
+      "line": 4,
+      "symbol": "Parallel.source",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/leo/Documents/Projects/ParallelFlock/ParallelFlock/Parallel.swift",
+      "line": 6,
+      "symbol": "Parallel.init(source:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/leo/Documents/Projects/ParallelFlock/ParallelFlock/Parallel.swift",
+      "line": 12,
+      "symbol": "Array.parallel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/leo/Documents/Projects/ParallelFlock/ParallelFlock/Parallel.swift",
+      "line": 18,
+      "symbol": "Parallel.map(_:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/leo/Documents/Projects/ParallelFlock/ParallelFlock/ParallelMapOperation.swift",
+      "line": 3,
+      "symbol": "ParallelMapOperation",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/leo/Documents/Projects/ParallelFlock/ParallelFlock/ParallelMapOperation.swift",
+      "line": 4,
+      "symbol": "ParallelMapOperation.source",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/leo/Documents/Projects/ParallelFlock/ParallelFlock/ParallelMapOperation.swift",
+      "line": 5,
+      "symbol": "ParallelMapOperation.itemClosure",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/leo/Documents/Projects/ParallelFlock/ParallelFlock/ParallelMapOperation.swift",
+      "line": 6,
+      "symbol": "ParallelMapOperation.completion",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/leo/Documents/Projects/ParallelFlock/ParallelFlock/ParallelMapOperation.swift",
+      "line": 7,
+      "symbol": "ParallelMapOperation.itemQueue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/leo/Documents/Projects/ParallelFlock/ParallelFlock/ParallelMapOperation.swift",
+      "line": 8,
+      "symbol": "ParallelMapOperation.mainQueue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/leo/Documents/Projects/ParallelFlock/ParallelFlock/ParallelMapOperation.swift",
+      "line": 9,
+      "symbol": "ParallelMapOperation.arrayQueue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/leo/Documents/Projects/ParallelFlock/ParallelFlock/ParallelMapOperation.swift",
+      "line": 11,
+      "symbol": "ParallelMapOperation.temporaryResult",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/leo/Documents/Projects/ParallelFlock/ParallelFlock/ParallelMapOperation.swift",
+      "line": 13,
+      "symbol": "ParallelMapOperation.init(source:itemClosure:completion:mainQueue:itemQueue:arrayQueue:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/leo/Documents/Projects/ParallelFlock/ParallelFlock/ParallelMapOperation.swift",
+      "line": 35,
+      "symbol": "ParallelMapOperation.begin()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/leo/Documents/Projects/ParallelFlock/ParallelFlock/ParallelOptions.swift",
+      "line": 3,
+      "symbol": "ParallelOptions",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/leo/Documents/Projects/ParallelFlock/ParallelFlock/ParallelOptions.swift",
+      "line": 4,
+      "symbol": "ParallelOptions.defaultQos",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/leo/Documents/Projects/ParallelFlock/ParallelFlock/ParallelOptions.swift",
+      "line": 12,
+      "symbol": "ParallelOptions.defaultQueue",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/leo/Documents/Projects/ParallelFlock"
+}
