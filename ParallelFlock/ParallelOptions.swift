@@ -13,7 +13,8 @@ public struct ParallelOptions {
     if #available(OSXApplicationExtension 10.10, *) {
       return DispatchQueue.global()
     } else {
-      return DispatchQueue(label: UUID().uuidString)
+      let uuid = UUID()
+      return DispatchQueue(label: uuid.uuidString)
     }
   }()
 }
