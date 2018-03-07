@@ -12,7 +12,7 @@ public class ParallelMapOperation<T, U> {
   /**
    The item mapping closure.
    */
-  public let itemClosure: (T, @escaping (U) -> Void) -> Void
+  public let transform: (T, @escaping (U) -> Void) -> Void
 
   /**
    The completion closure.
@@ -44,13 +44,13 @@ public class ParallelMapOperation<T, U> {
    */
   public init(
     source: [T],
-    itemClosure: @escaping (T, @escaping (U) -> Void) -> Void,
+    transform: @escaping (T, @escaping (U) -> Void) -> Void,
     completion: @escaping ([U]) -> Void,
     mainQueue: DispatchQueue? = nil,
     itemQueue: DispatchQueue? = nil,
     arrayQueue: DispatchQueue? = nil) {
     self.source = source
-    self.itemClosure = itemClosure
+    self.transform = transform
     self.completion = completion
     self.itemQueue = mainQueue ?? ParallelOptions.defaultQueue
     self.mainQueue = itemQueue ?? ParallelOptions.defaultQueue
@@ -68,29 +68,42 @@ public class ParallelMapOperation<T, U> {
    Begins the operation.
    */
   public func begin() {
+    // create our DispatchGroup
     let group = DispatchGroup()
 
+    // asynchronously on the main queue...
     self.mainQueue.async {
+      // iterate over the enumerated source array 
       for (index, item) in self.source.enumerated() {
+        // enter the DispatchGroup
         group.enter()
+        // asynchronously on our item queue...
         self.itemQueue.async(execute: {
-          self.itemClosure(item, { result in
+          // call the transform
+          self.transform(item, { result in
+            // asynchronously on our array queue...
             self.arrayQueue.async(group: nil, qos: ParallelOptions.defaultQoS, flags: .barrier, execute: {
+              // set the item at the index of the resulting array
               self.temporaryResult[index] = result
+              // leave the group
               group.leave()
             })
           })
         })
       }
 
+      // when the group is completed in the item queue
       group.notify(queue: self.itemQueue, execute: {
         let result: [U]
+        // filter the resulting array for non-optional items
         #if swift(>=4.1)
           result = self.temporaryResult.compactMap { $0 }
         #else
           result = self.temporaryResult.flatMap { $0 }
         #endif
+        // make sure the result is the same size of the source array
         assert(result.count == self.source.count)
+        // call the completion callback
         self.completion(result)
       })
     }
