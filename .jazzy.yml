@@ -1,1 +1,6 @@
 theme: ~/.jazzy-markdown
+xcodebuild_arguments:
+  - "-project"
+  - "ParallelFlock.xcodeproj"
+  - "-scheme"
+  - "iOS Framework"

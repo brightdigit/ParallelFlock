@@ -1,4 +1,3 @@
-# ParallelFlock
 ## Categories
 * [Structs](docs/Structs.md)
 * [Extensions](docs/Extensions.md)

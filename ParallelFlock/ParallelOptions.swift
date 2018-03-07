@@ -1,7 +1,13 @@
 import Foundation
 
+/**
+ Contains the options used for the creation of *DispatchQueue*.
+ */
 public struct ParallelOptions {
-  public static let defaultQos: DispatchQoS = {
+  /**
+   The default *DispatchQoS*.
+   */
+  public static let defaultQoS: DispatchQoS = {
     if #available(OSXApplicationExtension 10.10, *) {
       return DispatchQoS.default
     } else {
@@ -9,6 +15,9 @@ public struct ParallelOptions {
     }
   }()
 
+  /**
+   The default *DispatchQueu*.
+   */
   public static let defaultQueue: DispatchQueue = {
     if #available(OSXApplicationExtension 10.10, *) {
       return DispatchQueue.global()

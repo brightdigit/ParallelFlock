@@ -1,15 +1,47 @@
 import Foundation
 
+/**
+ The operation for a parallel map.
+ */
 public class ParallelMapOperation<T, U> {
+  /**
+   The source array.
+   */
   public let source: [T]
+
+  /**
+   The item mapping closure.
+   */
   public let itemClosure: (T, @escaping (U) -> Void) -> Void
+
+  /**
+   The completion closure.
+   */
   public let completion: ([U]) -> Void
+
+  /**
+   The DispatchQueue for each item map.
+   */
   public let itemQueue: DispatchQueue
+
+  /**
+   The DispatchQueue for the main operation.
+   */
   public let mainQueue: DispatchQueue
+
+  /**
+   The DispatchQueue for barrier array operation.
+   */
   public let arrayQueue: DispatchQueue
 
+  /**
+   The temporary result array.
+   */
   public private(set) var temporaryResult: [U?]
 
+  /**
+   Creates *ParallelMapOperation*.
+   */
   public init(
     source: [T],
     itemClosure: @escaping (T, @escaping (U) -> Void) -> Void,
@@ -24,7 +56,7 @@ public class ParallelMapOperation<T, U> {
     self.mainQueue = itemQueue ?? ParallelOptions.defaultQueue
     self.arrayQueue = arrayQueue ?? DispatchQueue(
       label: "arrayQueue",
-      qos: ParallelOptions.defaultQos,
+      qos: ParallelOptions.defaultQoS,
       attributes: .concurrent,
       autoreleaseFrequency: .inherit,
       target: nil)
@@ -32,6 +64,9 @@ public class ParallelMapOperation<T, U> {
     self.temporaryResult = [U?].init(repeating: nil, count: self.source.count)
   }
 
+  /**
+   Begins the operation.
+   */
   public func begin() {
     let group = DispatchGroup()
 
@@ -40,7 +75,7 @@ public class ParallelMapOperation<T, U> {
         group.enter()
         self.itemQueue.async(execute: {
           self.itemClosure(item, { result in
-            self.arrayQueue.async(group: nil, qos: ParallelOptions.defaultQos, flags: .barrier, execute: {
+            self.arrayQueue.async(group: nil, qos: ParallelOptions.defaultQoS, flags: .barrier, execute: {
               self.temporaryResult[index] = result
               group.leave()
             })
