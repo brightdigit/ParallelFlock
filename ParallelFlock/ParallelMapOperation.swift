@@ -12,12 +12,12 @@ public class ParallelMapOperation<T, U> {
   /**
    The item mapping closure.
    */
-  public let transform: (T, @escaping (U) -> Void) -> Void
+  public let transform: ParallelMapTransform<T, U>
 
   /**
    The completion closure.
    */
-  public let completion: ([U]) -> Void
+  public let completion: ParallelMapCompletion<U>
 
   /**
    The DispatchQueue for each item map.
@@ -29,83 +29,67 @@ public class ParallelMapOperation<T, U> {
    */
   public let mainQueue: DispatchQueue
 
-  /**
-   The DispatchQueue for barrier array operation.
-   */
-  public let arrayQueue: DispatchQueue
+  public private(set) var temporaryPointer: UnsafeMutablePointer<U>!
 
-  /**
-   The temporary result array.
-   */
-  public private(set) var temporaryResult: [U?]
+  public var memoryCapacity: Int {
+    return MemoryLayout<U>.size * self.source.count
+  }
 
   /**
    Creates *ParallelMapOperation*.
    */
   public init(
     source: [T],
-    transform: @escaping (T, @escaping (U) -> Void) -> Void,
-    completion: @escaping ([U]) -> Void,
+    transform: @escaping ParallelMapTransform<T, U>,
+    completion: @escaping ParallelMapCompletion<U>,
     mainQueue: DispatchQueue? = nil,
-    itemQueue: DispatchQueue? = nil,
-    arrayQueue: DispatchQueue? = nil) {
+    itemQueue: DispatchQueue? = nil) {
     self.source = source
     self.transform = transform
     self.completion = completion
-    self.itemQueue = mainQueue ?? ParallelOptions.defaultQueue
-    self.mainQueue = itemQueue ?? ParallelOptions.defaultQueue
-    self.arrayQueue = arrayQueue ?? DispatchQueue(
-      label: "arrayQueue",
-      qos: ParallelOptions.defaultQoS,
-      attributes: .concurrent,
-      autoreleaseFrequency: .inherit,
-      target: nil)
+    self.itemQueue = itemQueue ?? ParallelOptions.defaultQueue
+    self.mainQueue = mainQueue ?? ParallelOptions.defaultQueue
 
-    self.temporaryResult = [U?].init(repeating: nil, count: self.source.count)
+    self.temporaryPointer = UnsafeMutablePointer<U>.allocate(capacity: self.memoryCapacity)
   }
 
   /**
    Begins the operation.
    */
   public func begin() {
-    // create our DispatchGroup
+    self.mainQueue.async(execute: self.run)
+  }
+
+  func run() {
+    var count: Int = 0
     let group = DispatchGroup()
-
-    // asynchronously on the main queue...
-    self.mainQueue.async {
-      // iterate over the enumerated source array 
-      for (index, item) in self.source.enumerated() {
-        // enter the DispatchGroup
-        group.enter()
-        // asynchronously on our item queue...
-        self.itemQueue.async(execute: {
-          // call the transform
-          self.transform(item, { result in
-            // asynchronously on our array queue...
-            self.arrayQueue.async(group: nil, qos: ParallelOptions.defaultQoS, flags: .barrier, execute: {
-              // set the item at the index of the resulting array
-              self.temporaryResult[index] = result
-              // leave the group
-              group.leave()
-            })
-          })
+    for (offset, element): (Int, T) in self.source.enumerated() {
+      group.enter()
+      self.itemQueue.async(execute: {
+        self.transform(element, { result in
+          self.temporaryPointer[offset] = result
+          count += 1
+          group.leave()
         })
-      }
-
-      // when the group is completed in the item queue
-      group.notify(queue: self.itemQueue, execute: {
-        let result: [U]
-        // filter the resulting array for non-optional items
-        #if swift(>=4.1)
-          result = self.temporaryResult.compactMap { $0 }
-        #else
-          result = self.temporaryResult.flatMap { $0 }
-        #endif
-        // make sure the result is the same size of the source array
-        assert(result.count == self.source.count)
-        // call the completion callback
-        self.completion(result)
       })
     }
+    group.notify(queue: self.mainQueue, execute: {
+      let buffer = UnsafeBufferPointer<U>.init(start: self.temporaryPointer, count: self.source.count)
+      let result = [U](buffer)
+      assert(result.count == self.source.count)
+      self.completion(result)
+    })
+  }
+
+  deinit {
+    self.temporaryPointer.deinitialize(count: self.source.count)
+
+    #if swift(>=4.1)
+      self.temporaryPointer.deallocate()
+    #else
+      self.temporaryPointer.deallocate(capacity: self.memoryCapacity)
+    #endif
+
+    self.temporaryPointer = nil
   }
 }

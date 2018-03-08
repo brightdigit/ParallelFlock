@@ -28,6 +28,7 @@ class ParallelFlockTests: XCTestCase {
 
     var expected: [String]!
     var actual: [String]!
+    var timer: Timer?
 
     group.enter()
     _ = uuids.parallel.map({

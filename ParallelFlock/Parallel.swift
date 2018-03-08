@@ -31,8 +31,8 @@ public extension Parallel {
    Creates a *ParallelMapOperation* and begin the operation.
    */
   public func map<U>(
-    _ transform: @escaping (T, @escaping (U) -> Void) -> Void,
-    completion: @escaping ([U]) -> Void) -> ParallelMapOperation<T, U> {
+    _ transform: @escaping ParallelMapTransform<T, U>,
+    completion: @escaping ParallelMapCompletion<U>) -> ParallelMapOperation<T, U> {
     let operation = ParallelMapOperation(source: self.source, transform: transform, completion: completion)
     operation.begin()
     return operation
