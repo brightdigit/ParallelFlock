@@ -73,7 +73,7 @@ public class ParallelMapOperation<T, U> {
 
     // asynchronously on the main queue...
     self.mainQueue.async {
-      // iterate over the enumerated source array 
+      // iterate over the enumerated source array
       for (index, item) in self.source.enumerated() {
         // enter the DispatchGroup
         group.enter()

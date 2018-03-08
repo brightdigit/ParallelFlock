@@ -16,7 +16,7 @@ public struct ParallelOptions {
   }()
 
   /**
-   The default *DispatchQueu*.
+   The default *DispatchQueue*.
    */
   public static let defaultQueue: DispatchQueue = {
     if #available(OSXApplicationExtension 10.10, *) {
