@@ -1,12 +1,33 @@
 import Foundation
 
+/**
+ The operation for a parallel map.
+ */
 public class ParallelMapOperation<T, U>: ParallelOperation {
+  /**
+   The source array.
+   */
   public let source: [T]
-  public let itemClosure: ParallelMapItemClosure<T, U>
-  public let completion: ParallelMapCompletionClosure<U>
+
+  /**
+   The item mapping closure.
+   */
+  public let transform: ParallelMapTransform<T, U>
+
+  /**
+   The completion closure.
+   */
+  public let completion: ParallelMapCompletion<U>
+
+  /**
+   The DispatchQueue for each item map.
+   */
   public let itemQueue: DispatchQueue
+
+  /**
+   The DispatchQueue for the main operation.
+   */
   public let mainQueue: DispatchQueue
-  // public let arrayQueue: DispatchQueue
 
   public private(set) var status = ParallelOperationStatus<[U]>.initialized
   public private(set) var temporaryPointer: UnsafeMutablePointer<U>!
@@ -15,14 +36,17 @@ public class ParallelMapOperation<T, U>: ParallelOperation {
     return MemoryLayout<U>.size * self.source.count
   }
 
+  /**
+   Creates *ParallelMapOperation*.
+   */
   public init(
     source: [T],
-    itemClosure: @escaping ParallelMapItemClosure<T, U>,
-    completion: @escaping ParallelMapCompletionClosure<U>,
+    transform: @escaping ParallelMapTransform<T, U>,
+    completion: @escaping ParallelMapCompletion<U>,
     queue: DispatchQueue? = nil,
     itemQueue _: DispatchQueue? = nil) {
     self.source = source
-    self.itemClosure = itemClosure
+    self.transform = transform
     self.completion = completion
     self.itemQueue = queue ?? ParallelOptions.defaultQueue
     self.mainQueue = queue ?? ParallelOptions.defaultQueue
@@ -30,6 +54,9 @@ public class ParallelMapOperation<T, U>: ParallelOperation {
     self.temporaryPointer = UnsafeMutablePointer<U>.allocate(capacity: self.memoryCapacity)
   }
 
+  /**
+   Begins the operation.
+   */
   public func begin() {
     switch self.status {
     case .initialized:
@@ -49,7 +76,7 @@ public class ParallelMapOperation<T, U>: ParallelOperation {
     for (offset, element): (Int, T) in self.source.enumerated() {
       group.enter()
       self.itemQueue.async(execute: {
-        self.itemClosure(element, { result in
+        self.transform(element, { result in
           self.temporaryPointer[offset] = result
           count += 1
           self.status = .running(count)

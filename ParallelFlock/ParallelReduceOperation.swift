@@ -3,7 +3,7 @@ import Foundation
 public class ParallelReduceOperation<T>: ParallelOperation {
   public let source: [T]
   public let itemClosure: ParallelReduceItemClosure<T>
-  public let completion: ParallelCompletionClosure<T>
+  public let completion: ParallelOperationCompletion<T>
   public let itemQueue: DispatchQueue
   public let mainQueue: DispatchQueue
   public let arrayQueue: DispatchQueue
@@ -23,7 +23,7 @@ public class ParallelReduceOperation<T>: ParallelOperation {
   public init(
     source: [T],
     itemClosure: @escaping ParallelReduceItemClosure<T>,
-    completion: @escaping ParallelCompletionClosure<T>,
+    completion: @escaping ParallelOperationCompletion<T>,
     queue: DispatchQueue? = nil,
     itemQueue _: DispatchQueue? = nil,
     arrayQueue: DispatchQueue? = nil) {
@@ -34,7 +34,7 @@ public class ParallelReduceOperation<T>: ParallelOperation {
     self.mainQueue = queue ?? ParallelOptions.defaultQueue
     self.arrayQueue = arrayQueue ?? DispatchQueue(
       label: "arrayQueue",
-      qos: ParallelOptions.defaultQos,
+      qos: ParallelOptions.defaultQoS,
       attributes: .concurrent,
       autoreleaseFrequency: .inherit,
       target: nil)
@@ -71,7 +71,7 @@ public class ParallelReduceOperation<T>: ParallelOperation {
         group.enter()
         self.itemQueue.async {
           self.itemClosure(left, right, { reduced in
-            self.arrayQueue.async(group: nil, qos: ParallelOptions.defaultQos, flags: .barrier, execute: {
+            self.arrayQueue.async(group: nil, qos: ParallelOptions.defaultQoS, flags: .barrier, execute: {
               values.append(reduced)
               group.leave()
             })

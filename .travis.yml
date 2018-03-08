@@ -2,8 +2,7 @@ language: objective-c
 branches:
   only:
     - master
-    - feature/codecov
-    - release/1.0.0
+    - /^release\/.*$/
 matrix:
   include:
     - {osx_image: xcode9.2,         env: 'SCHEME="macOS Framework" PLATFORM="platform=OS X,arch=x86_64" SUFFIX="macOS" TAG="xcode9_2,macOS" SUFFIX="macOS"', os: osx, language: objective-c}
