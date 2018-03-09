@@ -47,6 +47,10 @@
 		B3FA91F220530FC100270BDD /* ParallelMapCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA91EC20530FC100270BDD /* ParallelMapCompletion.swift */; };
 		B3FA91F320530FC100270BDD /* ParallelMapCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA91EC20530FC100270BDD /* ParallelMapCompletion.swift */; };
 		B3FA91F420530FC100270BDD /* ParallelMapCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA91EC20530FC100270BDD /* ParallelMapCompletion.swift */; };
+		B3FA91F8205330A800270BDD /* ParallelMapBarrierArrayOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA91F7205330A800270BDD /* ParallelMapBarrierArrayOperation.swift */; };
+		B3FA91F9205330A800270BDD /* ParallelMapBarrierArrayOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA91F7205330A800270BDD /* ParallelMapBarrierArrayOperation.swift */; };
+		B3FA91FA205330A800270BDD /* ParallelMapBarrierArrayOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA91F7205330A800270BDD /* ParallelMapBarrierArrayOperation.swift */; };
+		B3FA91FB205330A800270BDD /* ParallelMapBarrierArrayOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA91F7205330A800270BDD /* ParallelMapBarrierArrayOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +81,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = B357A8E6203A10C9004BD19E;
 			remoteInfo = "ParallelFlock-macOS";
+		};
+		B3FA91F520532F8800270BDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3F2059D202B7EF90088B443 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B305EAB32052B31C009AEEDE;
+			remoteInfo = "ParallelFlockApp-iOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -133,6 +144,7 @@
 		B3F205AA202B7EF90088B443 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		B3FA91EB20530FC000270BDD /* ParallelMapTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallelMapTransform.swift; sourceTree = "<group>"; };
 		B3FA91EC20530FC100270BDD /* ParallelMapCompletion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallelMapCompletion.swift; sourceTree = "<group>"; };
+		B3FA91F7205330A800270BDD /* ParallelMapBarrierArrayOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallelMapBarrierArrayOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +281,7 @@
 		B3F205A8202B7EF90088B443 /* ParallelFlock */ = {
 			isa = PBXGroup;
 			children = (
+				B3FA91F7205330A800270BDD /* ParallelMapBarrierArrayOperation.swift */,
 				B3FA91EC20530FC100270BDD /* ParallelMapCompletion.swift */,
 				B3FA91EB20530FC000270BDD /* ParallelMapTransform.swift */,
 				B3B00354203A690D0048A7CE /* ParallelMapOperation.swift */,
@@ -412,6 +425,7 @@
 			);
 			dependencies = (
 				B3B0032C203A601F0048A7CE /* PBXTargetDependency */,
+				B3FA91F620532F8800270BDD /* PBXTargetDependency */,
 			);
 			name = ParallelFlockTests_iOS;
 			productName = ParallelFlockTests_iOS;
@@ -503,6 +517,7 @@
 					B3B00324203A601F0048A7CE = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						TestTargetID = B305EAB32052B31C009AEEDE;
 					};
 					B3B00334203A66040048A7CE = {
 						CreatedOnToolsVersion = 9.2;
@@ -736,6 +751,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3FA91EE20530FC100270BDD /* ParallelMapTransform.swift in Sources */,
+				B3FA91F9205330A800270BDD /* ParallelMapBarrierArrayOperation.swift in Sources */,
 				B300877D204DC743004C7078 /* ParallelOptions.swift in Sources */,
 				B3FA91F220530FC100270BDD /* ParallelMapCompletion.swift in Sources */,
 				B3B00367203A690E0048A7CE /* ParallelMapOperation.swift in Sources */,
@@ -748,6 +764,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3FA91EF20530FC100270BDD /* ParallelMapTransform.swift in Sources */,
+				B3FA91FA205330A800270BDD /* ParallelMapBarrierArrayOperation.swift in Sources */,
 				B300877E204DC743004C7078 /* ParallelOptions.swift in Sources */,
 				B3FA91F320530FC100270BDD /* ParallelMapCompletion.swift in Sources */,
 				B3B00368203A690E0048A7CE /* ParallelMapOperation.swift in Sources */,
@@ -760,6 +777,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3FA91F020530FC100270BDD /* ParallelMapTransform.swift in Sources */,
+				B3FA91FB205330A800270BDD /* ParallelMapBarrierArrayOperation.swift in Sources */,
 				B300877F204DC744004C7078 /* ParallelOptions.swift in Sources */,
 				B3FA91F420530FC100270BDD /* ParallelMapCompletion.swift in Sources */,
 				B3B00369203A690E0048A7CE /* ParallelMapOperation.swift in Sources */,
@@ -799,6 +817,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3FA91ED20530FC100270BDD /* ParallelMapTransform.swift in Sources */,
+				B3FA91F8205330A800270BDD /* ParallelMapBarrierArrayOperation.swift in Sources */,
 				B300877C204DC743004C7078 /* ParallelOptions.swift in Sources */,
 				B3FA91F120530FC100270BDD /* ParallelMapCompletion.swift in Sources */,
 				B3B00366203A690E0048A7CE /* ParallelMapOperation.swift in Sources */,
@@ -828,6 +847,11 @@
 			isa = PBXTargetDependency;
 			target = B357A8E6203A10C9004BD19E /* ParallelFlock-macOS */;
 			targetProxy = B3B0034B203A662B0048A7CE /* PBXContainerItemProxy */;
+		};
+		B3FA91F620532F8800270BDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B305EAB32052B31C009AEEDE /* ParallelFlockApp-iOS */;
+			targetProxy = B3FA91F520532F8800270BDD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1061,6 +1085,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ParallelFlockApp-iOS.app/ParallelFlockApp-iOS";
 			};
 			name = Debug;
 		};
@@ -1076,6 +1101,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ParallelFlockApp-iOS.app/ParallelFlockApp-iOS";
 			};
 			name = Release;
 		};
@@ -1205,7 +1231,7 @@
 				OTHER_SWIFT_FLAGS = "-Onone -Xfrontend -debug-time-function-bodies";
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "${PROJECT_NAME}";
-				PROJECT_VERSION = 0.1.1;
+				PROJECT_VERSION = 0.2.0;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1264,7 +1290,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "${PROJECT_NAME}";
-				PROJECT_VERSION = 0.1.1;
+				PROJECT_VERSION = 0.2.0;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;

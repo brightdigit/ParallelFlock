@@ -15,6 +15,9 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+  }
+
+  func startActivity() {
     let source = [Void].init(repeating: Void(), count: 10000)
     self.startTime = Date()
     #if USE_PARALLEL
