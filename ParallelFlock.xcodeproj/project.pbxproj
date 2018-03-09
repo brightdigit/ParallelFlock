@@ -11,6 +11,11 @@
 		B300877D204DC743004C7078 /* ParallelOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00357203A690D0048A7CE /* ParallelOptions.swift */; };
 		B300877E204DC743004C7078 /* ParallelOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00357203A690D0048A7CE /* ParallelOptions.swift */; };
 		B300877F204DC744004C7078 /* ParallelOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00357203A690D0048A7CE /* ParallelOptions.swift */; };
+		B305EAB72052B31C009AEEDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B305EAB62052B31C009AEEDE /* AppDelegate.swift */; };
+		B305EAB92052B31C009AEEDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B305EAB82052B31C009AEEDE /* ViewController.swift */; };
+		B305EABC2052B31C009AEEDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B305EABA2052B31C009AEEDE /* Main.storyboard */; };
+		B305EABE2052B31F009AEEDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B305EABD2052B31F009AEEDE /* Assets.xcassets */; };
+		B305EAC12052B31F009AEEDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B305EABF2052B31F009AEEDE /* LaunchScreen.storyboard */; };
 		B3506CF12051E90C00002E0C /* ParallelFlockPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3506CF02051E90C00002E0C /* ParallelFlockPerformanceTests.swift */; };
 		B3506CF22051E90C00002E0C /* ParallelFlockPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3506CF02051E90C00002E0C /* ParallelFlockPerformanceTests.swift */; };
 		B3506CF32051E90C00002E0C /* ParallelFlockPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3506CF02051E90C00002E0C /* ParallelFlockPerformanceTests.swift */; };
@@ -59,6 +64,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B305EAB42052B31C009AEEDE /* ParallelFlockApp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ParallelFlockApp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B305EAB62052B31C009AEEDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B305EAB82052B31C009AEEDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B305EABB2052B31C009AEEDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B305EABD2052B31F009AEEDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B305EAC02052B31F009AEEDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B305EAC22052B31F009AEEDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B30625BD204AE0A4009D1B4B /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		B32840B5203B6172006053DA /* Brewfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Brewfile; sourceTree = "<group>"; };
 		B32840B6203B617B006053DA /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -91,6 +103,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B305EAB12052B31C009AEEDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B357A8C9203A1097004BD19E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -153,6 +172,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B305EAB52052B31C009AEEDE /* ParallelFlockApp-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				B305EAB62052B31C009AEEDE /* AppDelegate.swift */,
+				B305EAB82052B31C009AEEDE /* ViewController.swift */,
+				B305EABA2052B31C009AEEDE /* Main.storyboard */,
+				B305EABD2052B31F009AEEDE /* Assets.xcassets */,
+				B305EABF2052B31F009AEEDE /* LaunchScreen.storyboard */,
+				B305EAC22052B31F009AEEDE /* Info.plist */,
+			);
+			path = "ParallelFlockApp-iOS";
+			sourceTree = "<group>";
+		};
 		B3B00326203A601F0048A7CE /* ParallelFlockTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +211,7 @@
 				B32840B5203B6172006053DA /* Brewfile */,
 				B3F205A8202B7EF90088B443 /* ParallelFlock */,
 				B3B00326203A601F0048A7CE /* ParallelFlockTests */,
+				B305EAB52052B31C009AEEDE /* ParallelFlockApp-iOS */,
 				B3F205A7202B7EF90088B443 /* Products */,
 				B301BB67204308D800FA8C4E /* Frameworks */,
 			);
@@ -194,6 +227,7 @@
 				B3B00325203A601F0048A7CE /* ParallelFlockTests_iOS.xctest */,
 				B3B00335203A66040048A7CE /* ParallelFlockTests_tvOS.xctest */,
 				B3B00345203A662A0048A7CE /* ParallelFlockTests_macOS.xctest */,
+				B305EAB42052B31C009AEEDE /* ParallelFlockApp-iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -251,6 +285,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		B305EAB32052B31C009AEEDE /* ParallelFlockApp-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B305EAC52052B31F009AEEDE /* Build configuration list for PBXNativeTarget "ParallelFlockApp-iOS" */;
+			buildPhases = (
+				B305EAB02052B31C009AEEDE /* Sources */,
+				B305EAB12052B31C009AEEDE /* Frameworks */,
+				B305EAB22052B31C009AEEDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ParallelFlockApp-iOS";
+			productName = "ParallelFlockApp-iOS";
+			productReference = B305EAB42052B31C009AEEDE /* ParallelFlockApp-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 		B357A8CC203A1097004BD19E /* ParallelFlock-watchOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B357A8D2203A1097004BD19E /* Build configuration list for PBXNativeTarget "ParallelFlock-watchOS" */;
@@ -395,6 +446,10 @@
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Bright Digit, LLC";
 				TargetAttributes = {
+					B305EAB32052B31C009AEEDE = {
+						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
+					};
 					B357A8CC203A1097004BD19E = {
 						CreatedOnToolsVersion = 9.3;
 						ProvisioningStyle = Automatic;
@@ -446,11 +501,22 @@
 				B3B00324203A601F0048A7CE /* ParallelFlockTests_iOS */,
 				B3B00334203A66040048A7CE /* ParallelFlockTests_tvOS */,
 				B3B00344203A662A0048A7CE /* ParallelFlockTests_macOS */,
+				B305EAB32052B31C009AEEDE /* ParallelFlockApp-iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B305EAB22052B31C009AEEDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B305EAC12052B31F009AEEDE /* LaunchScreen.storyboard in Resources */,
+				B305EABE2052B31F009AEEDE /* Assets.xcassets in Resources */,
+				B305EABC2052B31C009AEEDE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B357A8CB203A1097004BD19E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -618,6 +684,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B305EAB02052B31C009AEEDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B305EAB92052B31C009AEEDE /* ViewController.swift in Sources */,
+				B305EAB72052B31C009AEEDE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B357A8C8203A1097004BD19E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -705,7 +780,58 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		B305EABA2052B31C009AEEDE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B305EABB2052B31C009AEEDE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B305EABF2052B31F009AEEDE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B305EAC02052B31F009AEEDE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		B305EAC32052B31F009AEEDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MLT7M394S7;
+				INFOPLIST_FILE = "ParallelFlockApp-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brightdigit.ParallelFlockApp-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B305EAC42052B31F009AEEDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MLT7M394S7;
+				INFOPLIST_FILE = "ParallelFlockApp-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brightdigit.ParallelFlockApp-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		B357A8D3203A1097004BD19E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1144,6 +1270,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B305EAC52052B31F009AEEDE /* Build configuration list for PBXNativeTarget "ParallelFlockApp-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B305EAC32052B31F009AEEDE /* Debug */,
+				B305EAC42052B31F009AEEDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B357A8D2203A1097004BD19E /* Build configuration list for PBXNativeTarget "ParallelFlock-watchOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
