@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14092" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14092" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,48 +13,75 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ParallelFlockApp_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rKy-ph-dnA"/>
+                        <viewControllerLayoutGuide type="bottom" id="oKt-mZ-244"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2j3-k9-3BC">
-                                <rect key="frame" x="157" y="223" width="60" height="221"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2j3-k9-3BC">
+                                <rect key="frame" x="69.5" y="309" width="235" height="49"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G8L-Fh-doV">
-                                        <rect key="frame" x="20" y="20" width="20" height="181"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G8L-Fh-doV">
+                                        <rect key="frame" x="20" y="0.0" width="195" height="21"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Running Map Operation..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0X-QX-sTP">
-                                                <rect key="frame" x="20" y="20" width="20" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Running Map Operation..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0X-QX-sTP">
+                                                <rect key="frame" x="0.0" y="0.0" width="195" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knw-w6-4bx">
-                                                <rect key="frame" x="-11" y="19" width="85" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knw-w6-4bx">
+                                                <rect key="frame" x="0.0" y="0.0" width="195" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="x0X-QX-sTP" firstAttribute="top" secondItem="G8L-Fh-doV" secondAttribute="top" id="1Oh-Ux-nWs"/>
+                                            <constraint firstItem="x0X-QX-sTP" firstAttribute="top" secondItem="knw-w6-4bx" secondAttribute="top" id="8zy-Sn-cQa"/>
+                                            <constraint firstAttribute="bottom" secondItem="x0X-QX-sTP" secondAttribute="bottom" id="9nM-jv-ND6"/>
+                                            <constraint firstItem="x0X-QX-sTP" firstAttribute="bottom" secondItem="knw-w6-4bx" secondAttribute="bottom" id="CXS-Kl-AoC"/>
+                                            <constraint firstItem="x0X-QX-sTP" firstAttribute="leading" secondItem="G8L-Fh-doV" secondAttribute="leading" id="Nsu-3K-nhm"/>
+                                            <constraint firstItem="x0X-QX-sTP" firstAttribute="leading" secondItem="knw-w6-4bx" secondAttribute="leading" id="YbA-KK-V1p"/>
+                                            <constraint firstItem="x0X-QX-sTP" firstAttribute="trailing" secondItem="knw-w6-4bx" secondAttribute="trailing" id="v1h-nN-V4J"/>
+                                            <constraint firstAttribute="trailing" secondItem="x0X-QX-sTP" secondAttribute="trailing" id="yOI-8e-2TP"/>
+                                        </constraints>
                                     </view>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6V6-Do-h3u">
-                                        <rect key="frame" x="20" y="100" width="20" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6V6-Do-h3u">
+                                        <rect key="frame" x="107.5" y="29" width="20" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="6V6-Do-h3u" firstAttribute="centerX" secondItem="2j3-k9-3BC" secondAttribute="centerX" id="1cC-ek-gBn"/>
+                                    <constraint firstItem="6V6-Do-h3u" firstAttribute="top" secondItem="G8L-Fh-doV" secondAttribute="bottom" constant="8" symbolic="YES" id="MDp-nI-mqL"/>
+                                    <constraint firstAttribute="trailing" secondItem="G8L-Fh-doV" secondAttribute="trailing" constant="20" id="RcF-Nu-irq"/>
+                                    <constraint firstAttribute="bottom" secondItem="6V6-Do-h3u" secondAttribute="bottom" id="Xg7-gM-zvL"/>
+                                    <constraint firstItem="G8L-Fh-doV" firstAttribute="leading" secondItem="2j3-k9-3BC" secondAttribute="leading" constant="20" id="Zoe-KN-2YD"/>
+                                    <constraint firstItem="G8L-Fh-doV" firstAttribute="top" secondItem="2j3-k9-3BC" secondAttribute="top" id="uxz-At-bcc"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2j3-k9-3BC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MOE-zq-RhN"/>
+                            <constraint firstItem="2j3-k9-3BC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S6C-D4-syD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="6V6-Do-h3u" id="tzg-4w-hE4"/>
+                        <outlet property="completedLabel" destination="knw-w6-4bx" id="f2x-B6-yP6"/>
+                        <outlet property="runningLabel" destination="x0X-QX-sTP" id="SMj-ir-VcJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="37.600000000000001" y="33.733133433283363"/>
         </scene>
     </scenes>
 </document>

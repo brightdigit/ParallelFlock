@@ -19,6 +19,8 @@
 		B3506CF12051E90C00002E0C /* ParallelFlockPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3506CF02051E90C00002E0C /* ParallelFlockPerformanceTests.swift */; };
 		B3506CF22051E90C00002E0C /* ParallelFlockPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3506CF02051E90C00002E0C /* ParallelFlockPerformanceTests.swift */; };
 		B3506CF32051E90C00002E0C /* ParallelFlockPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3506CF02051E90C00002E0C /* ParallelFlockPerformanceTests.swift */; };
+		B3506CF42052C8A700002E0C /* ParallelFlock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F205A6202B7EF90088B443 /* ParallelFlock.framework */; };
+		B3506CF52052C8A700002E0C /* ParallelFlock.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3F205A6202B7EF90088B443 /* ParallelFlock.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B357A8EF203A116C004BD19E /* Parallel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CD0D19202B814D00A5D1A6 /* Parallel.swift */; };
 		B357A8F0203A116C004BD19E /* Parallel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CD0D19202B814D00A5D1A6 /* Parallel.swift */; };
 		B357A8F1203A116D004BD19E /* Parallel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CD0D19202B814D00A5D1A6 /* Parallel.swift */; };
@@ -40,6 +42,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B3506CF62052C8A700002E0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3F2059D202B7EF90088B443 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3F205A5202B7EF90088B443;
+			remoteInfo = "ParallelFlock-iOS";
+		};
 		B3B0032B203A601F0048A7CE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B3F2059D202B7EF90088B443 /* Project object */;
@@ -62,6 +71,20 @@
 			remoteInfo = "ParallelFlock-macOS";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B3506CF82052C8A700002E0C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B3506CF52052C8A700002E0C /* ParallelFlock.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B305EAB42052B31C009AEEDE /* ParallelFlockApp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ParallelFlockApp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3506CF42052C8A700002E0C /* ParallelFlock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,10 +316,12 @@
 				B305EAB02052B31C009AEEDE /* Sources */,
 				B305EAB12052B31C009AEEDE /* Frameworks */,
 				B305EAB22052B31C009AEEDE /* Resources */,
+				B3506CF82052C8A700002E0C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B3506CF72052C8A700002E0C /* PBXTargetDependency */,
 			);
 			name = "ParallelFlockApp-iOS";
 			productName = "ParallelFlockApp-iOS";
@@ -763,6 +789,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B3506CF72052C8A700002E0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3F205A5202B7EF90088B443 /* ParallelFlock-iOS */;
+			targetProxy = B3506CF62052C8A700002E0C /* PBXContainerItemProxy */;
+		};
 		B3B0032C203A601F0048A7CE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B3F205A5202B7EF90088B443 /* ParallelFlock-iOS */;
@@ -803,6 +834,7 @@
 		B305EAC32052B31F009AEEDE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -819,6 +851,7 @@
 		B305EAC42052B31F009AEEDE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
