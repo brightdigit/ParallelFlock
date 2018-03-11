@@ -48,6 +48,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dx5-x5-fJ3">
                                 <rect key="frame" x="98" y="318" width="178" height="30"/>
                                 <state key="normal" title="Choose Performance Test"/>
+                                <connections>
+                                    <action selector="performanceButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DaX-oA-L65"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3SP-oR-X6j">
                                 <rect key="frame" x="0.0" y="370" width="375" height="297"/>
@@ -98,6 +101,13 @@
                             <constraint firstItem="Dx5-x5-fJ3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rkt-at-9ub"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityContainer" destination="Vfu-BI-wJz" id="oS4-a7-QA8"/>
+                        <outlet property="performanceTestButton" destination="Dx5-x5-fJ3" id="EEf-ng-1Eg"/>
+                        <outletCollection property="tableViews" destination="gF1-i9-dMY" collectionClass="NSMutableArray" id="AIy-DB-jW3"/>
+                        <outletCollection property="tableViews" destination="Ti0-QW-QHU" collectionClass="NSMutableArray" id="LN1-eh-n1H"/>
+                        <outletCollection property="tableViews" destination="Tqj-Ga-URn" collectionClass="NSMutableArray" id="U28-2Q-cUl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
