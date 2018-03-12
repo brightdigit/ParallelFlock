@@ -1,6 +1,40 @@
 import ParallelFlock
 import UIKit
 
+func primeFactors(value: UInt32) -> UInt32 {
+  if value == 1 {
+    return 1
+  }
+
+  var result: [UInt32] = []
+
+  var number = value
+  var divisor = 2
+
+  func testDivisor(_ divisor: UInt32) {
+    while number > divisor && number % divisor == 0 {
+      result.append(divisor)
+      number /= divisor
+    }
+  }
+
+  testDivisor(2)
+
+  for other in stride(from: 3, to: sqrt(Double(value)), by: 2) {
+    testDivisor(UInt32(other))
+  }
+
+  if number > 1 {
+    result.append(number)
+  }
+
+  return result.max() ?? 1
+}
+
+func primeFactorsAsync(_ value: UInt32, _ completion: (UInt32) -> Void) {
+  completion(primeFactors(value: value))
+}
+
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   enum RecordType: Int, CustomStringConvertible {
     case nonParallel = 0
@@ -24,6 +58,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   var currentProcess: (Date, RecordType)?
   var operation: AnyObject?
   var alertController: UIAlertController?
+
+  let source = [Void].init(repeating: Void(), count: 100_000).map { UInt32.max }
 
   @IBOutlet var tableViews: [UITableView]!
   @IBOutlet var performanceTestButton: UIButton!
@@ -56,7 +92,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     self.present(alertController, animated: true, completion: nil)
   }
 
-  func onOperationCompletion(_: [Void]) {
+  func onOperationCompletion(_: [UInt32]) {
     self.operation = nil
 
     DispatchQueue.main.async(execute: self.endActivity)
@@ -74,24 +110,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     self.performanceTestButton.isHidden = true
     self.activityContainer.isHidden = false
     let recordType = RecordType.all[index]
-    let source = [Void].init(repeating: Void(), count: 1_000_0000)
     self.currentProcess = (Date(), recordType)
+
     switch recordType {
     case .nonParallel:
       ParallelOptions.defaultQueue.async {
-        _ = source.map { Void() }
+        _ = self.source.map(primeFactors)
         DispatchQueue.main.async {
           self.endActivity()
         }
       }
       break
     case .parallelPointer:
-      let operation = ParallelMapOperation(source: source, transform: { $1(Void()) }, completion: self.onOperationCompletion)
+
+      let operation = ParallelMapOperation<UInt32, UInt32>(source: source, transform: primeFactorsAsync, completion: self.onOperationCompletion)
       operation.begin()
       self.operation = operation
-
+      break
     case .parallelBarrier:
-      let operation = ParallelMapBarrierArrayOperation(source: source, transform: { $1(Void()) }, completion: self.onOperationCompletion)
+      let operation = ParallelMapBarrierArrayOperation<UInt32, UInt32>(source: source, transform: primeFactorsAsync, completion: self.onOperationCompletion)
       operation.begin()
       self.operation = operation
       break
@@ -99,14 +136,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   }
 
   func endActivity() {
-//    self.endTime = Date()
-    ////    self.activityIndicatorView.stopAnimating()
-    ////    self.completedLabel.isHidden = false
-    ////    self.runningLabel.isHidden = true
-//    if let startTime = self.startTime, let endTime = self.endTime {
-//      let timeInterval = endTime.timeIntervalSince(startTime)
-//      self.completedLabel.text = "Completed in \(timeInterval)"
-    // }
     let endDate = Date()
 
     guard let (startDate, recordType) = self.currentProcess else {
