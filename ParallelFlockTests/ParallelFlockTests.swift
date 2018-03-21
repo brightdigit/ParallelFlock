@@ -6,6 +6,18 @@ extension UUID {
     return UUID()
   }
 }
+
+class StringClass {
+  let string: String
+
+  init(string: String) {
+    self.string = string
+  }
+
+  init() {
+    self.string = String()
+  }
+}
 class ParallelFlockTests: XCTestCase {
   class OperationWatcher<T> where T: ParallelOperation {
     let operation: T
@@ -32,6 +44,19 @@ class ParallelFlockTests: XCTestCase {
     super.tearDown()
   }
 
+  func testArrayDynamicMap() {
+    let exp = expectation(description: "completed conversion")
+
+    _ = (0 ... 100).map { $0 }.parallel.map({ StringClass(string: String(repeating: "a", count: $0)) }) { result in
+      for (count, string) in result.enumerated() {
+        XCTAssertEqual(string.string.count, count)
+      }
+      exp.fulfill()
+    }
+
+    wait(for: [exp], timeout: 300)
+  }
+
   func testArrayMap() {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -46,14 +71,15 @@ class ParallelFlockTests: XCTestCase {
     var timer: Timer?
 
     group.enter()
-    let operation = uuids.parallel.map({
-      $0.uuidString
-    }, completion: { result in
+
+    let operation = uuids.parallel.map({ (uuid) -> String in
+      uuid.uuidString
+    }) { result in
       timer?.invalidate()
       timer = nil
       actual = result
       group.leave()
-    })
+    }
 
     group.enter()
     DispatchQueue.main.async {
