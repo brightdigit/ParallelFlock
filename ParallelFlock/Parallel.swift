@@ -43,17 +43,41 @@ public extension Parallel {
    Creates a *ParallelMapOperation* and begin the operation.
    */
   public func map<U>(
+    default defaultValue: U,
     _ transform: @escaping ParallelMapTransform<T, U>,
     completion: @escaping ParallelMapCompletion<U>) -> ParallelMapOperation<T, U> {
-    let operation = ParallelMapOperation(source: self.source, transform: transform, completion: completion)
+    let operation = ParallelMapOperation(
+      source: self.source,
+      default: defaultValue,
+      transform: transform,
+      completion: completion)
+    operation.begin()
+    return operation
+  }
+
+  public func map<U: DefaultInitializable>(
+    _ transform: @escaping (T) -> U,
+    completion: @escaping ParallelMapCompletion<U>) -> ParallelMapOperation<T, U> {
+    return self.map(self.async(transform), completion: completion)
+  }
+
+  public func map<U: DefaultInitializable>(
+    _ transform: @escaping ParallelMapTransform<T, U>,
+    completion: @escaping ParallelMapCompletion<U>) -> ParallelMapOperation<T, U> {
+    let operation = ParallelMapOperation(
+      source: self.source,
+      default: U(),
+      transform: transform,
+      completion: completion)
     operation.begin()
     return operation
   }
 
   public func map<U>(
+    default defaultValue: U,
     _ transform: @escaping (T) -> U,
     completion: @escaping ParallelMapCompletion<U>) -> ParallelMapOperation<T, U> {
-    return self.map(self.async(transform), completion: completion)
+    return self.map(default: defaultValue, self.async(transform), completion: completion)
   }
 
   public func reduce(

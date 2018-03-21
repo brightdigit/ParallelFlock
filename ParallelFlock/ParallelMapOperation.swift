@@ -16,7 +16,7 @@ extension String: DefaultInitializable {
 /**
  The operation for a parallel map.
  */
-public class ParallelMapOperation<T, U>: ParallelOperation where U: DefaultInitializable {
+public class ParallelMapOperation<T, U>: ParallelOperation {
   /**
    The source array.
    */
@@ -55,6 +55,7 @@ public class ParallelMapOperation<T, U>: ParallelOperation where U: DefaultIniti
    */
   public init(
     source: [T],
+    default defaultValue: U,
     transform: @escaping ParallelMapTransform<T, U>,
     completion: @escaping ParallelMapCompletion<U>,
     queue: DispatchQueue? = nil,
@@ -66,7 +67,7 @@ public class ParallelMapOperation<T, U>: ParallelOperation where U: DefaultIniti
     self.mainQueue = queue ?? ParallelOptions.defaultQueue
 
     self.temporaryPointer = UnsafeMutablePointer<U>.allocate(capacity: self.source.count)
-    self.temporaryPointer.initialize(repeating: U(), count: self.source.count)
+    self.temporaryPointer.initialize(repeating: defaultValue, count: self.source.count)
   }
 
   /**
