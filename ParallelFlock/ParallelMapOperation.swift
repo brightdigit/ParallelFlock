@@ -1,9 +1,22 @@
 import Foundation
 
+public protocol DefaultInitializable {
+  init()
+}
+
+extension Array: DefaultInitializable {
+}
+
+extension UInt32: DefaultInitializable {
+}
+
+extension String: DefaultInitializable {
+}
+
 /**
  The operation for a parallel map.
  */
-public class ParallelMapOperation<T, U>: ParallelOperation {
+public class ParallelMapOperation<T, U>: ParallelOperation where U: DefaultInitializable {
   /**
    The source array.
    */
@@ -32,6 +45,7 @@ public class ParallelMapOperation<T, U>: ParallelOperation {
   public private(set) var status = ParallelOperationStatus<[U]>.initialized
   public private(set) var temporaryPointer: UnsafeMutablePointer<U>!
 
+  @available(*, deprecated: 1.0.0)
   public var memoryCapacity: Int {
     return MemoryLayout<U>.size * self.source.count
   }
@@ -51,7 +65,8 @@ public class ParallelMapOperation<T, U>: ParallelOperation {
     self.itemQueue = queue ?? ParallelOptions.defaultQueue
     self.mainQueue = queue ?? ParallelOptions.defaultQueue
 
-    self.temporaryPointer = UnsafeMutablePointer<U>.allocate(capacity: self.memoryCapacity)
+    self.temporaryPointer = UnsafeMutablePointer<U>.allocate(capacity: self.source.count)
+    self.temporaryPointer.initialize(repeating: U(), count: self.source.count)
   }
 
   /**

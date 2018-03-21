@@ -7,14 +7,14 @@ extension UUID {
   }
 }
 
-class StringClass {
+class StringClass: DefaultInitializable {
   let string: String
 
   init(string: String) {
     self.string = string
   }
 
-  init() {
+  required init() {
     self.string = String()
   }
 }
