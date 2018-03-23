@@ -45,11 +45,6 @@ public class ParallelMapOperation<T, U>: ParallelOperation {
   public private(set) var status = ParallelOperationStatus<[U]>.initialized
   public private(set) var temporaryPointer: UnsafeMutablePointer<U>!
 
-  @available(*, deprecated: 1.0.0)
-  public var memoryCapacity: Int {
-    return MemoryLayout<U>.size * self.source.count
-  }
-
   /**
    Creates *ParallelMapOperation*.
    */
@@ -67,7 +62,12 @@ public class ParallelMapOperation<T, U>: ParallelOperation {
     self.mainQueue = queue ?? ParallelOptions.defaultQueue
 
     self.temporaryPointer = UnsafeMutablePointer<U>.allocate(capacity: self.source.count)
-    self.temporaryPointer.initialize(repeating: defaultValue, count: self.source.count)
+
+    #if swift(>=4.1)
+      self.temporaryPointer.initialize(repeating: defaultValue, count: self.source.count)
+    #else
+      self.temporaryPointer.initialize(to: defaultValue, count: self.source.count)
+    #endif
   }
 
   /**
@@ -115,7 +115,7 @@ public class ParallelMapOperation<T, U>: ParallelOperation {
     #if swift(>=4.1)
       self.temporaryPointer.deallocate()
     #else
-      self.temporaryPointer.deallocate(capacity: self.memoryCapacity)
+      self.temporaryPointer.deallocate(capacity: self.source.count)
     #endif
 
     self.temporaryPointer = nil
