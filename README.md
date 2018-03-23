@@ -2,6 +2,7 @@
 ## Categories
 * [Structs](docs/Structs.md)
 * [Extensions](docs/Extensions.md)
+* [Typealiases](docs/Typealiases.md)
 * [Classes](docs/Classes.md)
 ## Types
 ### Classes

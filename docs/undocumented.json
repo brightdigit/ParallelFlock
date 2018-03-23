@@ -1,6 +1,33 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/leo/Documents/Projects/ParallelFlock/ParallelFlock/ParallelMapCompletion.swift",
+      "line": 3,
+      "symbol": "ParallelMapCompletion",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/leo/Documents/Projects/ParallelFlock/ParallelFlock/ParallelMapOperation.swift",
+      "line": 32,
+      "symbol": "ParallelMapOperation.temporaryPointer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/leo/Documents/Projects/ParallelFlock/ParallelFlock/ParallelMapOperation.swift",
+      "line": 34,
+      "symbol": "ParallelMapOperation.memoryCapacity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/leo/Documents/Projects/ParallelFlock/ParallelFlock/ParallelMapTransform.swift",
+      "line": 3,
+      "symbol": "ParallelMapTransform",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    }
   ],
   "source_directory": "/Users/leo/Documents/Projects/ParallelFlock"
 }
