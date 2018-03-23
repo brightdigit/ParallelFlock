@@ -31,15 +31,12 @@ public class ParallelMapOperation<T, U> {
 
   public private(set) var temporaryPointer: UnsafeMutablePointer<U>!
 
-  public var memoryCapacity: Int {
-    return MemoryLayout<U>.size * self.source.count
-  }
-
   /**
    Creates *ParallelMapOperation*.
    */
   public init(
     source: [T],
+    default defaultValue: U,
     transform: @escaping ParallelMapTransform<T, U>,
     completion: @escaping ParallelMapCompletion<U>,
     mainQueue: DispatchQueue? = nil,
@@ -50,7 +47,13 @@ public class ParallelMapOperation<T, U> {
     self.itemQueue = itemQueue ?? ParallelOptions.defaultQueue
     self.mainQueue = mainQueue ?? ParallelOptions.defaultQueue
 
-    self.temporaryPointer = UnsafeMutablePointer<U>.allocate(capacity: self.memoryCapacity)
+    self.temporaryPointer = UnsafeMutablePointer<U>.allocate(capacity: self.source.count)
+
+    #if swift(>=4.1)
+      self.temporaryPointer.initialize(repeating: defaultValue, count: self.source.count)
+    #else
+      self.temporaryPointer.initialize(to: defaultValue, count: self.source.count)
+    #endif
   }
 
   /**
@@ -87,7 +90,7 @@ public class ParallelMapOperation<T, U> {
     #if swift(>=4.1)
       self.temporaryPointer.deallocate()
     #else
-      self.temporaryPointer.deallocate(capacity: self.memoryCapacity)
+      self.temporaryPointer.deallocate(capacity: self.source.count)
     #endif
 
     self.temporaryPointer = nil

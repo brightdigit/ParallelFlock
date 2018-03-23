@@ -27,6 +27,10 @@
 		B357A8F2203A145E004BD19E /* ParallelFlock.h in Headers */ = {isa = PBXBuildFile; fileRef = B3F205A9202B7EF90088B443 /* ParallelFlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B357A8F3203A145F004BD19E /* ParallelFlock.h in Headers */ = {isa = PBXBuildFile; fileRef = B3F205A9202B7EF90088B443 /* ParallelFlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B357A8F4203A145F004BD19E /* ParallelFlock.h in Headers */ = {isa = PBXBuildFile; fileRef = B3F205A9202B7EF90088B443 /* ParallelFlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3AF141B2065416600C94454 /* DefaultInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF141A2065416600C94454 /* DefaultInitializable.swift */; };
+		B3AF141C2065416600C94454 /* DefaultInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF141A2065416600C94454 /* DefaultInitializable.swift */; };
+		B3AF141D2065416600C94454 /* DefaultInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF141A2065416600C94454 /* DefaultInitializable.swift */; };
+		B3AF141E2065416600C94454 /* DefaultInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF141A2065416600C94454 /* DefaultInitializable.swift */; };
 		B3B0032A203A601F0048A7CE /* ParallelFlock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F205A6202B7EF90088B443 /* ParallelFlock.framework */; };
 		B3B00330203A61440048A7CE /* ParallelFlockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00327203A601F0048A7CE /* ParallelFlockTests.swift */; };
 		B3B0033A203A66040048A7CE /* ParallelFlock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B357A8DA203A10B9004BD19E /* ParallelFlock.framework */; };
@@ -129,6 +133,7 @@
 		B3A0AB86203B6C86001D01F4 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		B3A0AB87203B6C86001D01F4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B3A0AB88203B6C86001D01F4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		B3AF141A2065416600C94454 /* DefaultInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultInitializable.swift; sourceTree = "<group>"; };
 		B3B00325203A601F0048A7CE /* ParallelFlockTests_iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParallelFlockTests_iOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B00327203A601F0048A7CE /* ParallelFlockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallelFlockTests.swift; sourceTree = "<group>"; };
 		B3B00329203A601F0048A7CE /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
@@ -292,6 +297,7 @@
 				B3F205A9202B7EF90088B443 /* ParallelFlock.h */,
 				B3F205AA202B7EF90088B443 /* Info-iOS.plist */,
 				B3CD0D19202B814D00A5D1A6 /* Parallel.swift */,
+				B3AF141A2065416600C94454 /* DefaultInitializable.swift */,
 			);
 			path = ParallelFlock;
 			sourceTree = "<group>";
@@ -751,6 +757,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3FA91EE20530FC100270BDD /* ParallelMapTransform.swift in Sources */,
+				B3AF141C2065416600C94454 /* DefaultInitializable.swift in Sources */,
 				B3FA91F9205330A800270BDD /* ParallelMapBarrierArrayOperation.swift in Sources */,
 				B300877D204DC743004C7078 /* ParallelOptions.swift in Sources */,
 				B3FA91F220530FC100270BDD /* ParallelMapCompletion.swift in Sources */,
@@ -764,6 +771,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3FA91EF20530FC100270BDD /* ParallelMapTransform.swift in Sources */,
+				B3AF141D2065416600C94454 /* DefaultInitializable.swift in Sources */,
 				B3FA91FA205330A800270BDD /* ParallelMapBarrierArrayOperation.swift in Sources */,
 				B300877E204DC743004C7078 /* ParallelOptions.swift in Sources */,
 				B3FA91F320530FC100270BDD /* ParallelMapCompletion.swift in Sources */,
@@ -777,6 +785,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3FA91F020530FC100270BDD /* ParallelMapTransform.swift in Sources */,
+				B3AF141E2065416600C94454 /* DefaultInitializable.swift in Sources */,
 				B3FA91FB205330A800270BDD /* ParallelMapBarrierArrayOperation.swift in Sources */,
 				B300877F204DC744004C7078 /* ParallelOptions.swift in Sources */,
 				B3FA91F420530FC100270BDD /* ParallelMapCompletion.swift in Sources */,
@@ -817,6 +826,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3FA91ED20530FC100270BDD /* ParallelMapTransform.swift in Sources */,
+				B3AF141B2065416600C94454 /* DefaultInitializable.swift in Sources */,
 				B3FA91F8205330A800270BDD /* ParallelMapBarrierArrayOperation.swift in Sources */,
 				B300877C204DC743004C7078 /* ParallelOptions.swift in Sources */,
 				B3FA91F120530FC100270BDD /* ParallelMapCompletion.swift in Sources */,

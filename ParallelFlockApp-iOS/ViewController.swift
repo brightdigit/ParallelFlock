@@ -1,6 +1,15 @@
 import ParallelFlock
 import UIKit
 
+extension Array: DefaultInitializable {
+}
+
+extension UInt32: DefaultInitializable {
+}
+
+extension String: DefaultInitializable {
+}
+
 func primeFactors(value: UInt32) -> UInt32 {
   if value == 1 {
     return 1
@@ -122,8 +131,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
       }
       break
     case .parallelPointer:
-
-      let operation = ParallelMapOperation<UInt32, UInt32>(source: source, transform: primeFactorsAsync, completion: self.onOperationCompletion)
+      let operation = ParallelMapOperation<UInt32, UInt32>(source: source, default: 0, transform: primeFactorsAsync, completion: self.onOperationCompletion)
       operation.begin()
       self.operation = operation
       break
