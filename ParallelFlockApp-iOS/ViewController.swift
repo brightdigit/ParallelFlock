@@ -39,25 +39,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   enum RecordType: Int, CustomStringConvertible {
     case nonParallel = 0
     case parallelBarrier = 1
+    case parallelPointer = 2
 
     var description: String {
       return RecordType.descriptions[self.rawValue]
     }
 
-    static let descriptions = ["Serial", "Barrier"]
-    static let all: [RecordType] = [.nonParallel, .parallelBarrier]
+    static let descriptions = ["Serial", "Barrier", "Pointer"]
+    static let all: [RecordType] = [.nonParallel, .parallelBarrier, .parallelPointer]
   }
 
   var records: [RecordType: [(Date, Date)]] = [
     .nonParallel: [],
-    .parallelBarrier: []
+    .parallelBarrier: [],
+    .parallelPointer: []
   ]
 
   var currentProcess: (Date, RecordType)?
   var operation: AnyObject?
   var alertController: UIAlertController?
 
-  let source = [Void].init(repeating: Void(), count: 10000).map { UInt32.max }
+  let source = [Void].init(repeating: Void(), count: 1_000_000).map { arc4random() / 100_000 }
 
   @IBOutlet var tableViews: [UITableView]!
   @IBOutlet var performanceTestButton: UIButton!
@@ -119,8 +121,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
       }
       break
+    case .parallelPointer:
+      let operation = ParallelMapOperation<UInt32, UInt32>(source: source, default: 0, transform: primeFactorsAsync, completion: self.onOperationCompletion)
+      operation.begin()
+      self.operation = operation
+      break
     case .parallelBarrier:
-      let operation = ParallelMapOperation<UInt32, UInt32>(source: source, transform: primeFactorsAsync, completion: self.onOperationCompletion)
+      let operation = ParallelMapBarrierArrayOperation<UInt32, UInt32>(source: source, transform: primeFactorsAsync, completion: self.onOperationCompletion)
       operation.begin()
       self.operation = operation
       break
