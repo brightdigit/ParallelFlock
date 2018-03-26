@@ -6,27 +6,6 @@ extension UUID {
     return UUID()
   }
 }
-
-extension Array: DefaultInitializable {
-}
-
-extension UInt32: DefaultInitializable {
-}
-
-extension String: DefaultInitializable {
-}
-
-class StringClass: DefaultInitializable {
-  let string: String
-
-  init(string: String) {
-    self.string = string
-  }
-
-  required init() {
-    self.string = String()
-  }
-}
 class ParallelFlockTests: XCTestCase {
   override func setUp() {
     super.setUp()
@@ -36,19 +15,6 @@ class ParallelFlockTests: XCTestCase {
   override func tearDown() {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     super.tearDown()
-  }
-
-  func testArrayDynamicMap() {
-    let exp = expectation(description: "completed conversion")
-
-    _ = (0 ... 100).map { $0 }.parallel.map({ $1(StringClass(string: String(repeating: "a", count: $0))) }, completion: { result in
-      for (count, string) in result.enumerated() {
-        XCTAssertEqual(string.string.count, count)
-      }
-      exp.fulfill()
-    })
-
-    wait(for: [exp], timeout: 300)
   }
 
   func testArrayMap() {
@@ -64,13 +30,12 @@ class ParallelFlockTests: XCTestCase {
     var actual: [String]!
 
     group.enter()
-
-    let operation = uuids.parallel.map({ (uuid, completion) -> Void in
-      completion(uuid.uuidString)
-    }) { result in
+    _ = uuids.parallel.map({
+      $1($0.uuidString)
+    }, completion: { result in
       actual = result
       group.leave()
-    }
+    })
 
     group.enter()
     DispatchQueue.main.async {

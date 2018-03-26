@@ -1,15 +1,6 @@
 import ParallelFlock
 import UIKit
 
-extension Array: DefaultInitializable {
-}
-
-extension UInt32: DefaultInitializable {
-}
-
-extension String: DefaultInitializable {
-}
-
 func primeFactors(value: UInt32) -> UInt32 {
   if value == 1 {
     return 1
@@ -48,27 +39,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   enum RecordType: Int, CustomStringConvertible {
     case nonParallel = 0
     case parallelBarrier = 1
-    case parallelPointer = 2
 
     var description: String {
       return RecordType.descriptions[self.rawValue]
     }
 
-    static let descriptions = ["Serial", "Barrier", "Pointer"]
-    static let all: [RecordType] = [.nonParallel, .parallelBarrier, .parallelPointer]
+    static let descriptions = ["Serial", "Barrier"]
+    static let all: [RecordType] = [.nonParallel, .parallelBarrier]
   }
 
   var records: [RecordType: [(Date, Date)]] = [
     .nonParallel: [],
-    .parallelBarrier: [],
-    .parallelPointer: []
+    .parallelBarrier: []
   ]
 
   var currentProcess: (Date, RecordType)?
   var operation: AnyObject?
   var alertController: UIAlertController?
 
-  let source = [Void].init(repeating: Void(), count: 100_000).map { UInt32.max }
+  let source = [Void].init(repeating: Void(), count: 10000).map { UInt32.max }
 
   @IBOutlet var tableViews: [UITableView]!
   @IBOutlet var performanceTestButton: UIButton!
@@ -85,7 +74,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   }
 
   @IBAction func performanceButtonAction(_ sender: UIButton) {
-    let alertController = UIAlertController(title: sender.titleLabel?.text, message: nil, preferredStyle: .actionSheet)
+    let alertController = UIAlertController(title: sender.titleLabel?.text, message: nil, preferredStyle: .alert)
 
     let alertActions = RecordType.all.map { (recordType) -> UIAlertAction in
       return UIAlertAction(title: recordType.description, style: .default, handler: self.onAlertAction)
@@ -130,13 +119,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
       }
       break
-    case .parallelPointer:
-      let operation = ParallelMapOperation<UInt32, UInt32>(source: source, default: 0, transform: primeFactorsAsync, completion: self.onOperationCompletion)
-      operation.begin()
-      self.operation = operation
-      break
     case .parallelBarrier:
-      let operation = ParallelMapBarrierArrayOperation<UInt32, UInt32>(source: source, transform: primeFactorsAsync, completion: self.onOperationCompletion)
+      let operation = ParallelMapOperation<UInt32, UInt32>(source: source, transform: primeFactorsAsync, completion: self.onOperationCompletion)
       operation.begin()
       self.operation = operation
       break
