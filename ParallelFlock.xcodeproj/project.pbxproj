@@ -37,6 +37,8 @@
 		B3B00367203A690E0048A7CE /* ParallelMapOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00354203A690D0048A7CE /* ParallelMapOperation.swift */; };
 		B3B00368203A690E0048A7CE /* ParallelMapOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00354203A690D0048A7CE /* ParallelMapOperation.swift */; };
 		B3B00369203A690E0048A7CE /* ParallelMapOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B00354203A690D0048A7CE /* ParallelMapOperation.swift */; };
+		B3CB2970206ABC5C00946C6E /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3CB296F206ABC5C00946C6E /* Storyboard.storyboard */; };
+		B3CB2972206ABCC500946C6E /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2971206ABCC500946C6E /* CollectionViewController.swift */; };
 		B3CD0D1A202B814D00A5D1A6 /* Parallel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CD0D19202B814D00A5D1A6 /* Parallel.swift */; };
 		B3F205B7202B7EF90088B443 /* ParallelFlock.h in Headers */ = {isa = PBXBuildFile; fileRef = B3F205A9202B7EF90088B443 /* ParallelFlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -126,6 +128,8 @@
 		B3B00349203A662B0048A7CE /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
 		B3B00354203A690D0048A7CE /* ParallelMapOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallelMapOperation.swift; sourceTree = "<group>"; };
 		B3B00357203A690D0048A7CE /* ParallelOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallelOptions.swift; sourceTree = "<group>"; };
+		B3CB296F206ABC5C00946C6E /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		B3CB2971206ABCC500946C6E /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		B3CD0D19202B814D00A5D1A6 /* Parallel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parallel.swift; sourceTree = "<group>"; };
 		B3F205A6202B7EF90088B443 /* ParallelFlock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParallelFlock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F205A9202B7EF90088B443 /* ParallelFlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParallelFlock.h; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 				B305EABD2052B31F009AEEDE /* Assets.xcassets */,
 				B305EABF2052B31F009AEEDE /* LaunchScreen.storyboard */,
 				B305EAC22052B31F009AEEDE /* Info.plist */,
+				B3CB296F206ABC5C00946C6E /* Storyboard.storyboard */,
+				B3CB2971206ABCC500946C6E /* CollectionViewController.swift */,
 			);
 			path = "ParallelFlockApp-iOS";
 			sourceTree = "<group>";
@@ -547,6 +553,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B305EAC12052B31F009AEEDE /* LaunchScreen.storyboard in Resources */,
+				B3CB2970206ABC5C00946C6E /* Storyboard.storyboard in Resources */,
 				B305EABE2052B31F009AEEDE /* Assets.xcassets in Resources */,
 				B305EABC2052B31C009AEEDE /* Main.storyboard in Resources */,
 			);
@@ -723,6 +730,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3CB2972206ABCC500946C6E /* CollectionViewController.swift in Sources */,
 				B305EAB92052B31C009AEEDE /* ViewController.swift in Sources */,
 				B305EAB72052B31C009AEEDE /* AppDelegate.swift in Sources */,
 			);
